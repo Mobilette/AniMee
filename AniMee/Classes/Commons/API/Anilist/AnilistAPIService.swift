@@ -9,6 +9,7 @@
 import Foundation
 import PromiseKit
 import MBLogger
+import OAuthSwift
 
 class AnilistAPIService: AnimeAPIServiceProtocol
 {
@@ -19,21 +20,22 @@ class AnilistAPIService: AnimeAPIServiceProtocol
     
     // MARK: - Request
     
-    func authorize() -> Promise<AnimeAPIServiceSuccessHandler>
+    func authorize() -> Promise<OAuthSwiftCredential>
     {
-        return Promise<AnimeAPIServiceSuccessHandler> { fullfil, reject in
+        return Promise<OAuthSwiftCredential> { fullfil, reject in
             // TODO: probably a bug due to swift compiler
-            self.oauthService.authorize().then { tokenSuccessHandler -> Void in
-                fullfil((
-                    credential: tokenSuccessHandler.credential,
-                    response: tokenSuccessHandler.response,
-                    parameters: tokenSuccessHandler.parameters
-                ))
+            self.oauthService.authorize().then { credential -> Void in
+                fullfil(credential)
             }
                 .catch { error -> Void in
                     reject(error)
             }
         }
+    }
+    
+    private func isAuthorized() -> Bool
+    {
+        return false
     }
     
     func handleAuthorizingWithOpenURL(url: NSURL)
@@ -43,7 +45,21 @@ class AnilistAPIService: AnimeAPIServiceProtocol
 
     func fetchAnimeEpisodes() -> Promise<String>
     {
-        return AnilistAnimeAPIService.fetchAnimeEpisodes()
+        return Promise<String> { fullfil, reject in
+            AnilistAPIService.sharedInstance.authorize()
+                .then { _ -> Void in
+                    AnilistAnimeAPIService.fetchAnimeEpisodes()
+                        .then { JSONString -> Void in
+                            fullfil(JSONString)
+                        }
+                        .catch { error -> Void in
+                            reject(error)
+                    }
+                }
+                .catch { error -> Void in
+                    reject(error)
+            }
+        }
     }
 
     // MARK: - Type

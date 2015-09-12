@@ -10,15 +10,9 @@ import Foundation
 import PromiseKit
 import OAuthSwift
 
-typealias AnimeAPIServiceSuccessHandler = (
-    credential: OAuthSwiftCredential,
-    response: NSURLResponse?,
-    parameters: NSDictionary
-)
-
 protocol AnimeAPIServiceProtocol
 {
-    func authorize() -> Promise<AnimeAPIServiceSuccessHandler>
+    func authorize() -> Promise<OAuthSwiftCredential>
     func handleAuthorizingWithOpenURL(url: NSURL)
     func fetchAnimeEpisodes() -> Promise<String>
 }

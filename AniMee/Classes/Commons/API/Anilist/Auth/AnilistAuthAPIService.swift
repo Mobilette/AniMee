@@ -14,14 +14,12 @@ import MBLogger
 
 protocol OAuthService
 {
-    func authorize() -> Promise<AnilistAuthAPIService.TokenSuccessHandler>
+    func authorize() -> Promise<OAuthSwiftCredential>
     func handleAuthorizingWithOpenURL(url: NSURL)
 }
 
 class AnilistAuthAPIService: OAuthService
 {
-    typealias TokenSuccessHandler = (credential: OAuthSwiftCredential, response: NSURLResponse?, parameters: NSDictionary)
-    
     // MARK: - Request
     
     // MARK: - Property
@@ -42,9 +40,9 @@ class AnilistAuthAPIService: OAuthService
     
     // MARK: - Authorize
     
-    func authorize() -> Promise<AnilistAuthAPIService.TokenSuccessHandler>
+    func authorize() -> Promise<OAuthSwiftCredential>
     {
-        return Promise<AnilistAuthAPIService.TokenSuccessHandler> { fullfil, reject in
+        return Promise<OAuthSwiftCredential> { fullfil, reject in
             let callbackURL = NSURL(string: Anilist.RedirectURI.rawValue)
             self.oauthService.authorizeWithCallbackURL(
                 callbackURL!,
@@ -54,7 +52,7 @@ class AnilistAuthAPIService: OAuthService
                 success: { (credential, response, parameters) -> Void in
                     // TODO: handle errors
                     AnilistAuthAPIService.storeToKeychain(credential, consumerKey: Anilist.ConsumerKey.rawValue)
-                    fullfil((credential: credential, response: response, parameters: parameters))
+                    fullfil(credential)
                 },
                 failure: { (error) -> Void in
                     reject(error)

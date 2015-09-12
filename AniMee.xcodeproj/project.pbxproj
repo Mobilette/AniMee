@@ -26,6 +26,13 @@
 		69FD7D121BA4877F0095DDDB /* AnimeAPIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD7D111BA4877F0095DDDB /* AnimeAPIServiceProtocol.swift */; };
 		69FD7D151BA498310095DDDB /* AnimeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD7D141BA498310095DDDB /* AnimeRouter.swift */; };
 		69FD7D171BA4BAFF0095DDDB /* AnilistAnimeAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD7D161BA4BAFF0095DDDB /* AnilistAnimeAPIService.swift */; };
+		69FD7D1B1BA4BECD0095DDDB /* AnimeListWeekNetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD7D1A1BA4BECD0095DDDB /* AnimeListWeekNetworkProtocol.swift */; };
+		69FD7D201BA4BFC60095DDDB /* AnimeListWeekJSONItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD7D1F1BA4BFC60095DDDB /* AnimeListWeekJSONItem.swift */; };
+		69FD7D221BA4D4990095DDDB /* AnimeListWeekItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD7D211BA4D4990095DDDB /* AnimeListWeekItem.swift */; };
+		69FD7D261BA4D5C70095DDDB /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD7D251BA4D5C70095DDDB /* Episode.swift */; };
+		69FD7D281BA4D5D40095DDDB /* EpisodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD7D271BA4D5D40095DDDB /* EpisodeRepository.swift */; };
+		69FD7D2A1BA4DD6C0095DDDB /* APIDateISO8601Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD7D291BA4DD6C0095DDDB /* APIDateISO8601Transform.swift */; };
+		69FD7D2D1BA4E2A70095DDDB /* AnimeListWeekViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD7D2C1BA4E2A70095DDDB /* AnimeListWeekViewItem.swift */; };
 		D41402EAD94AB62B0E93FEF5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E02E5D29F9FC8FCD24E405 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -64,6 +71,13 @@
 		69FD7D111BA4877F0095DDDB /* AnimeAPIServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeAPIServiceProtocol.swift; sourceTree = "<group>"; };
 		69FD7D141BA498310095DDDB /* AnimeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeRouter.swift; sourceTree = "<group>"; };
 		69FD7D161BA4BAFF0095DDDB /* AnilistAnimeAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnilistAnimeAPIService.swift; sourceTree = "<group>"; };
+		69FD7D1A1BA4BECD0095DDDB /* AnimeListWeekNetworkProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekNetworkProtocol.swift; sourceTree = "<group>"; };
+		69FD7D1F1BA4BFC60095DDDB /* AnimeListWeekJSONItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekJSONItem.swift; sourceTree = "<group>"; };
+		69FD7D211BA4D4990095DDDB /* AnimeListWeekItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekItem.swift; sourceTree = "<group>"; };
+		69FD7D251BA4D5C70095DDDB /* Episode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		69FD7D271BA4D5D40095DDDB /* EpisodeRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeRepository.swift; sourceTree = "<group>"; };
+		69FD7D291BA4DD6C0095DDDB /* APIDateISO8601Transform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDateISO8601Transform.swift; sourceTree = "<group>"; };
+		69FD7D2C1BA4E2A70095DDDB /* AnimeListWeekViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekViewItem.swift; sourceTree = "<group>"; };
 		CEA306702F055D2D3B9DA292 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E2E02E5D29F9FC8FCD24E405 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -165,6 +179,7 @@
 		69A6672E1BA42DE200289546 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				69FD7D231BA4D5970095DDDB /* Domain */,
 				69FD7D081BA478E10095DDDB /* API */,
 			);
 			path = Commons;
@@ -189,14 +204,8 @@
 		69A667311BA42E0800289546 /* Week */ = {
 			isa = PBXGroup;
 			children = (
-				69A667421BA42EE100289546 /* AnimeListWeekInteractor.swift */,
-				69A667431BA42EE100289546 /* AnimeListWeekInteractorIO.swift */,
-				69A667441BA42EE100289546 /* AnimeListWeekModuleInterface.swift */,
-				69A667451BA42EE100289546 /* AnimeListWeekNetworkController.swift */,
-				69A667461BA42EE100289546 /* AnimeListWeekPresenter.swift */,
-				69A667471BA42EE100289546 /* AnimeListWeekViewController.swift */,
-				69A667481BA42EE100289546 /* AnimeListWeekViewInterface.swift */,
-				69A667491BA42EE100289546 /* AnimeListWeekWireframe.swift */,
+				69FD7D191BA4BE730095DDDB /* App Logic */,
+				69FD7D181BA4BE6B0095DDDB /* User Interface */,
 			);
 			path = Week;
 			sourceTree = "<group>";
@@ -205,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				69FD7D091BA479420095DDDB /* Anilist */,
+				69FD7D291BA4DD6C0095DDDB /* APIDateISO8601Transform.swift */,
 				69FD7D0C1BA479850095DDDB /* RouterProtocol.swift */,
 			);
 			path = API;
@@ -236,6 +246,65 @@
 				69FD7D161BA4BAFF0095DDDB /* AnilistAnimeAPIService.swift */,
 			);
 			path = Anime;
+			sourceTree = "<group>";
+		};
+		69FD7D181BA4BE6B0095DDDB /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				69FD7D2B1BA4E2990095DDDB /* Entity */,
+				69A667441BA42EE100289546 /* AnimeListWeekModuleInterface.swift */,
+				69A667461BA42EE100289546 /* AnimeListWeekPresenter.swift */,
+				69A667471BA42EE100289546 /* AnimeListWeekViewController.swift */,
+				69A667481BA42EE100289546 /* AnimeListWeekViewInterface.swift */,
+				69A667491BA42EE100289546 /* AnimeListWeekWireframe.swift */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		69FD7D191BA4BE730095DDDB /* App Logic */ = {
+			isa = PBXGroup;
+			children = (
+				69FD7D1C1BA4BFA70095DDDB /* Entity */,
+				69FD7D1A1BA4BECD0095DDDB /* AnimeListWeekNetworkProtocol.swift */,
+				69A667451BA42EE100289546 /* AnimeListWeekNetworkController.swift */,
+				69A667421BA42EE100289546 /* AnimeListWeekInteractor.swift */,
+				69A667431BA42EE100289546 /* AnimeListWeekInteractorIO.swift */,
+			);
+			name = "App Logic";
+			sourceTree = "<group>";
+		};
+		69FD7D1C1BA4BFA70095DDDB /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				69FD7D1F1BA4BFC60095DDDB /* AnimeListWeekJSONItem.swift */,
+				69FD7D211BA4D4990095DDDB /* AnimeListWeekItem.swift */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		69FD7D231BA4D5970095DDDB /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				69FD7D241BA4D5B10095DDDB /* Episode */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		69FD7D241BA4D5B10095DDDB /* Episode */ = {
+			isa = PBXGroup;
+			children = (
+				69FD7D251BA4D5C70095DDDB /* Episode.swift */,
+				69FD7D271BA4D5D40095DDDB /* EpisodeRepository.swift */,
+			);
+			path = Episode;
+			sourceTree = "<group>";
+		};
+		69FD7D2B1BA4E2990095DDDB /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				69FD7D2C1BA4E2A70095DDDB /* AnimeListWeekViewItem.swift */,
+			);
+			name = Entity;
 			sourceTree = "<group>";
 		};
 		BC0B86E87CD06F6D1CE6F6D7 /* Pods */ = {
@@ -407,20 +476,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				69A6674F1BA42EE100289546 /* AnimeListWeekViewController.swift in Sources */,
+				69FD7D261BA4D5C70095DDDB /* Episode.swift in Sources */,
 				69FD7D0B1BA479630095DDDB /* AnilistAPIService.swift in Sources */,
 				69A6670D1BA42DA500289546 /* AppDelegate.swift in Sources */,
 				69FD7D151BA498310095DDDB /* AnimeRouter.swift in Sources */,
 				69FD7D121BA4877F0095DDDB /* AnimeAPIServiceProtocol.swift in Sources */,
 				69FD7D171BA4BAFF0095DDDB /* AnilistAnimeAPIService.swift in Sources */,
 				69A667501BA42EE100289546 /* AnimeListWeekViewInterface.swift in Sources */,
+				69FD7D1B1BA4BECD0095DDDB /* AnimeListWeekNetworkProtocol.swift in Sources */,
 				69A6674E1BA42EE100289546 /* AnimeListWeekPresenter.swift in Sources */,
 				69A6674B1BA42EE100289546 /* AnimeListWeekInteractorIO.swift in Sources */,
+				69FD7D2A1BA4DD6C0095DDDB /* APIDateISO8601Transform.swift in Sources */,
 				69A6674D1BA42EE100289546 /* AnimeListWeekNetworkController.swift in Sources */,
+				69FD7D221BA4D4990095DDDB /* AnimeListWeekItem.swift in Sources */,
 				69FD7D101BA47AC00095DDDB /* AnilistAuthAPIService.swift in Sources */,
 				69A6674C1BA42EE100289546 /* AnimeListWeekModuleInterface.swift in Sources */,
 				69A667511BA42EE100289546 /* AnimeListWeekWireframe.swift in Sources */,
 				69A6674A1BA42EE100289546 /* AnimeListWeekInteractor.swift in Sources */,
 				69FD7D0D1BA479850095DDDB /* RouterProtocol.swift in Sources */,
+				69FD7D201BA4BFC60095DDDB /* AnimeListWeekJSONItem.swift in Sources */,
+				69FD7D2D1BA4E2A70095DDDB /* AnimeListWeekViewItem.swift in Sources */,
+				69FD7D281BA4D5D40095DDDB /* EpisodeRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

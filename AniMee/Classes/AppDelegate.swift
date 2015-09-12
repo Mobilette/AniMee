@@ -13,6 +13,7 @@ import NSLogger
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    static let presenter = AnimeListWeekPresenter()
 
 
     func application(
@@ -21,8 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ) -> Bool
     {
         self.startNSLogger()
-        self.authorizeAnilistAPIService()
-        // Override point for customization after application launch.
+        
+//        let interactor = AnimeListWeekInteractor()
+//        let networkController = AnimeListWeekNetworkController()
+//        interactor.networkController = networkController
+//        interactor.output = AppDelegate.presenter
+//        AppDelegate.presenter.interactor = interactor
+//        
+//        AppDelegate.presenter.updateView()
+        
         return true
     }
     
@@ -40,18 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         LoggerSetupBonjour(logger, nil, identifier)
         LoggerStart(nil)
         println("Start NSLogger with identifier: \(identifier)")
-    }
-    
-    func authorizeAnilistAPIService()
-    {
-        AnilistAPIService.sharedInstance.authorize()
-            .then { animeAPIServiceSuccessHandler -> Void in
-                println(animeAPIServiceSuccessHandler)
-                AnilistAPIService.sharedInstance.fetchAnimeEpisodes()
-            }
-            .catch { error -> Void in
-                println(error)
-        }
     }
     
     func application(
