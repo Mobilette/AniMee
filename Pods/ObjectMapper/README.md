@@ -12,7 +12,6 @@ ObjectMapper is a framework written in Swift that makes it easy for you to conve
 - [Custom Transformations](#custom-transfoms)
 - [Subclassing](#subclasses)
 - [ObjectMapper + Alamofire](#objectmapper--alamofire) 
-- [ObjectMapper + Realm](#objectmapper--realm)
 - [Contributing](#contributing)
 - [Installation](#installation)
 
@@ -27,7 +26,7 @@ ObjectMapper is a framework written in Swift that makes it easy for you to conve
 To support mapping, a Class or Struct just needs to implement the ```Mappable``` protocol.
 ```swift
 public protocol Mappable {
-	init?(_ map: Map)
+    static func newInstance(map: Map) -> Mappable?
     mutating func mapping(map: Map)
 }
 ```
@@ -44,9 +43,9 @@ class User: Mappable {
     var friends: [User]?                        // Array of Users
     var birthday: NSDate?
 
-	required init?(_ map: Map){
-
-	}
+    class func newInstance(map: Map) -> Mappable? {
+        return User()
+    }
 
     // Mappable
     func mapping(map: Map) {
@@ -65,9 +64,9 @@ struct Temperature: Mappable {
     var celcius: Double?
     var fahrenheit: Double?
 
-	required init?(_ map: Map){
-
-	}
+    static func newInstance(map: Map) -> Mappable? {
+        return Temperature()
+    }
 
 	mutating func mapping(map: Map) {
 		celcius 	<- map["celcius"]
@@ -99,7 +98,6 @@ Object mapper can map classes composed of the following types:
 - Dictionary\<String, AnyObject\>
 - Object\<T: Mappable\>
 - Array\<T: Mappable\>
-- Set\<T: Mappable\> 
 - Dictionary\<String, T: Mappable\>
 - Dictionary\<String, Array\<T: Mappable\>\>
 - Optionals of all the above
@@ -114,15 +112,9 @@ ObjectMapper supports dot notation within keys for easy mapping of nested object
 }
 ```
 You can access the nested objects as follows:
-```swift
+```
 func mapping(map: Map){
     distance <- map["distance.value"]
-}
-```
-If you have a key that contains `.`, you can disable the above feature as follows:
-```swift
-func mapping(map: Map){
-    identifier <- map["app.inditifier", nested: false]
 }
 ```
 
@@ -173,9 +165,9 @@ Classes that implement the Mappable protocol can easily be subclassed. When subc
 class Base: Mappable {
 	var base: String?
 	
-	required init?(_ map: Map){
-
-	}
+	class func newInstance(map: Map) -> Mappable? {
+        return Base()
+    }
 
 	func mapping(map: Map) {
 		base <- map["base"]
@@ -185,9 +177,9 @@ class Base: Mappable {
 class Subclass: Base {
 	var sub: String?
 
-	required init?(_ map: Map){
-		super.init(map)
-	}
+	override class func newInstance(map: Map) -> Mappable? {
+        return Subclass()
+    }
 
 	override func mapping(map: Map) {
 		super.mapping(map)
@@ -197,32 +189,11 @@ class Subclass: Base {
 }
 ```
 
+<!-- ##To Do -->
+
 #ObjectMapper + Alamofire
 
 If you are using [Alamofire](https://github.com/Alamofire/Alamofire) for networking and you want to convert your responses to swift objects, you can use [AlamofireObjectMapper](https://github.com/tristanhimmelman/AlamofireObjectMapper). It is a simple Alamofire extension that uses ObjectMapper to automatically map JSON response data to swift objects.
-
-
-#ObjectMapper + Realm
-
-ObjectMapper and Realm can be used together. Simply follow the Class structure below and you will be able to use ObjectMapper to generate your Realm models:
-
-```swift
-class Model: Object, Mappable {
-	dynamic var name = ""
-
-	required convenience init?(_ map: Map) {
-		self.init()
-	}
-
-	func mapping(map: Map) {
-		name <- map["name"]
-	}
-}
-
-Note: Generating a JSON string of a Realm Object using ObjectMappers' `toJSON` function only works within a Realm write transaction. This is caused because ObjectMapper uses the `inout` flag in its mapping functions (`<-`) which are used both for serializing and deserializing. Realm detects the flag and forces the `toJSON` function to be called within a write block even though the objects are not being modified.
-```
-
-<!-- ##To Do -->
 
 #Contributing
 

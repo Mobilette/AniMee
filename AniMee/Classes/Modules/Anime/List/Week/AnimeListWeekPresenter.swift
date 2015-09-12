@@ -22,7 +22,7 @@ class AnimeListWeekPresenter:
 
     func updateView()
     {
-    	<# ... #>
+    	
     }
     
     // MARK: - AnimeListWeek interactor output interface
