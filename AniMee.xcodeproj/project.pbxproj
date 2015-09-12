@@ -1,0 +1,581 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		69A6670D1BA42DA500289546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A6670C1BA42DA500289546 /* AppDelegate.swift */; };
+		69A667121BA42DA500289546 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69A667101BA42DA500289546 /* Main.storyboard */; };
+		69A667141BA42DA500289546 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69A667131BA42DA500289546 /* Images.xcassets */; };
+		69A667171BA42DA500289546 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69A667151BA42DA500289546 /* LaunchScreen.xib */; };
+		69A667231BA42DA500289546 /* AniMeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A667221BA42DA500289546 /* AniMeeTests.swift */; };
+		69A6674A1BA42EE100289546 /* AnimeListWeekInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A667421BA42EE100289546 /* AnimeListWeekInteractor.swift */; };
+		69A6674B1BA42EE100289546 /* AnimeListWeekInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A667431BA42EE100289546 /* AnimeListWeekInteractorIO.swift */; };
+		69A6674C1BA42EE100289546 /* AnimeListWeekModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A667441BA42EE100289546 /* AnimeListWeekModuleInterface.swift */; };
+		69A6674D1BA42EE100289546 /* AnimeListWeekNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A667451BA42EE100289546 /* AnimeListWeekNetworkController.swift */; };
+		69A6674E1BA42EE100289546 /* AnimeListWeekPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A667461BA42EE100289546 /* AnimeListWeekPresenter.swift */; };
+		69A6674F1BA42EE100289546 /* AnimeListWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A667471BA42EE100289546 /* AnimeListWeekViewController.swift */; };
+		69A667501BA42EE100289546 /* AnimeListWeekViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A667481BA42EE100289546 /* AnimeListWeekViewInterface.swift */; };
+		69A667511BA42EE100289546 /* AnimeListWeekWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A667491BA42EE100289546 /* AnimeListWeekWireframe.swift */; };
+		D41402EAD94AB62B0E93FEF5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E02E5D29F9FC8FCD24E405 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		69A6671D1BA42DA500289546 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69A666FF1BA42DA500289546 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69A667061BA42DA500289546;
+			remoteInfo = AniMee;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		148DC8F13349F78BF0248601 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		69A667071BA42DA500289546 /* AniMee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AniMee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		69A6670B1BA42DA500289546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69A6670C1BA42DA500289546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		69A667111BA42DA500289546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		69A667131BA42DA500289546 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		69A667161BA42DA500289546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		69A6671C1BA42DA500289546 /* AniMeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AniMeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		69A667211BA42DA500289546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69A667221BA42DA500289546 /* AniMeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniMeeTests.swift; sourceTree = "<group>"; };
+		69A667421BA42EE100289546 /* AnimeListWeekInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekInteractor.swift; sourceTree = "<group>"; };
+		69A667431BA42EE100289546 /* AnimeListWeekInteractorIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekInteractorIO.swift; sourceTree = "<group>"; };
+		69A667441BA42EE100289546 /* AnimeListWeekModuleInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekModuleInterface.swift; sourceTree = "<group>"; };
+		69A667451BA42EE100289546 /* AnimeListWeekNetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekNetworkController.swift; sourceTree = "<group>"; };
+		69A667461BA42EE100289546 /* AnimeListWeekPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekPresenter.swift; sourceTree = "<group>"; };
+		69A667471BA42EE100289546 /* AnimeListWeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekViewController.swift; sourceTree = "<group>"; };
+		69A667481BA42EE100289546 /* AnimeListWeekViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekViewInterface.swift; sourceTree = "<group>"; };
+		69A667491BA42EE100289546 /* AnimeListWeekWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekWireframe.swift; sourceTree = "<group>"; };
+		CEA306702F055D2D3B9DA292 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E2E02E5D29F9FC8FCD24E405 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		69A667041BA42DA500289546 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D41402EAD94AB62B0E93FEF5 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69A667191BA42DA500289546 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		69A666FE1BA42DA500289546 = {
+			isa = PBXGroup;
+			children = (
+				69A667091BA42DA500289546 /* AniMee */,
+				69A6671F1BA42DA500289546 /* AniMeeTests */,
+				69A667081BA42DA500289546 /* Products */,
+				BC0B86E87CD06F6D1CE6F6D7 /* Pods */,
+				F8A29049D941D4817DDC1421 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		69A667081BA42DA500289546 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				69A667071BA42DA500289546 /* AniMee.app */,
+				69A6671C1BA42DA500289546 /* AniMeeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		69A667091BA42DA500289546 /* AniMee */ = {
+			isa = PBXGroup;
+			children = (
+				69A6672C1BA42DB000289546 /* Classes */,
+				69A667101BA42DA500289546 /* Main.storyboard */,
+				69A667131BA42DA500289546 /* Images.xcassets */,
+				69A667151BA42DA500289546 /* LaunchScreen.xib */,
+				69A6670A1BA42DA500289546 /* Supporting Files */,
+			);
+			path = AniMee;
+			sourceTree = "<group>";
+		};
+		69A6670A1BA42DA500289546 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				69A6670B1BA42DA500289546 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		69A6671F1BA42DA500289546 /* AniMeeTests */ = {
+			isa = PBXGroup;
+			children = (
+				69A667221BA42DA500289546 /* AniMeeTests.swift */,
+				69A667201BA42DA500289546 /* Supporting Files */,
+			);
+			path = AniMeeTests;
+			sourceTree = "<group>";
+		};
+		69A667201BA42DA500289546 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				69A667211BA42DA500289546 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		69A6672C1BA42DB000289546 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				69A6672E1BA42DE200289546 /* Commons */,
+				69A6672D1BA42DD100289546 /* Modules */,
+				69A6670C1BA42DA500289546 /* AppDelegate.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		69A6672D1BA42DD100289546 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				69A6672F1BA42DF000289546 /* Anime */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		69A6672E1BA42DE200289546 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		69A6672F1BA42DF000289546 /* Anime */ = {
+			isa = PBXGroup;
+			children = (
+				69A667301BA42DFD00289546 /* List */,
+			);
+			path = Anime;
+			sourceTree = "<group>";
+		};
+		69A667301BA42DFD00289546 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				69A667311BA42E0800289546 /* Week */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		69A667311BA42E0800289546 /* Week */ = {
+			isa = PBXGroup;
+			children = (
+				69A667421BA42EE100289546 /* AnimeListWeekInteractor.swift */,
+				69A667431BA42EE100289546 /* AnimeListWeekInteractorIO.swift */,
+				69A667441BA42EE100289546 /* AnimeListWeekModuleInterface.swift */,
+				69A667451BA42EE100289546 /* AnimeListWeekNetworkController.swift */,
+				69A667461BA42EE100289546 /* AnimeListWeekPresenter.swift */,
+				69A667471BA42EE100289546 /* AnimeListWeekViewController.swift */,
+				69A667481BA42EE100289546 /* AnimeListWeekViewInterface.swift */,
+				69A667491BA42EE100289546 /* AnimeListWeekWireframe.swift */,
+			);
+			path = Week;
+			sourceTree = "<group>";
+		};
+		BC0B86E87CD06F6D1CE6F6D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				148DC8F13349F78BF0248601 /* Pods.debug.xcconfig */,
+				CEA306702F055D2D3B9DA292 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F8A29049D941D4817DDC1421 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2E02E5D29F9FC8FCD24E405 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		69A667061BA42DA500289546 /* AniMee */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69A667261BA42DA500289546 /* Build configuration list for PBXNativeTarget "AniMee" */;
+			buildPhases = (
+				EEF3CD9607C9BC84B7D54351 /* Check Pods Manifest.lock */,
+				69A667031BA42DA500289546 /* Sources */,
+				69A667041BA42DA500289546 /* Frameworks */,
+				69A667051BA42DA500289546 /* Resources */,
+				0CAB4BA1031FD6815BFD9F69 /* Embed Pods Frameworks */,
+				AA77782612A8BAC41BD55B0E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AniMee;
+			productName = AniMee;
+			productReference = 69A667071BA42DA500289546 /* AniMee.app */;
+			productType = "com.apple.product-type.application";
+		};
+		69A6671B1BA42DA500289546 /* AniMeeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69A667291BA42DA500289546 /* Build configuration list for PBXNativeTarget "AniMeeTests" */;
+			buildPhases = (
+				69A667181BA42DA500289546 /* Sources */,
+				69A667191BA42DA500289546 /* Frameworks */,
+				69A6671A1BA42DA500289546 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69A6671E1BA42DA500289546 /* PBXTargetDependency */,
+			);
+			name = AniMeeTests;
+			productName = AniMeeTests;
+			productReference = 69A6671C1BA42DA500289546 /* AniMeeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		69A666FF1BA42DA500289546 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = Mobilette;
+				TargetAttributes = {
+					69A667061BA42DA500289546 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					69A6671B1BA42DA500289546 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 69A667061BA42DA500289546;
+					};
+				};
+			};
+			buildConfigurationList = 69A667021BA42DA500289546 /* Build configuration list for PBXProject "AniMee" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 69A666FE1BA42DA500289546;
+			productRefGroup = 69A667081BA42DA500289546 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				69A667061BA42DA500289546 /* AniMee */,
+				69A6671B1BA42DA500289546 /* AniMeeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		69A667051BA42DA500289546 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69A667121BA42DA500289546 /* Main.storyboard in Resources */,
+				69A667171BA42DA500289546 /* LaunchScreen.xib in Resources */,
+				69A667141BA42DA500289546 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69A6671A1BA42DA500289546 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CAB4BA1031FD6815BFD9F69 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA77782612A8BAC41BD55B0E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEF3CD9607C9BC84B7D54351 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		69A667031BA42DA500289546 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69A6674F1BA42EE100289546 /* AnimeListWeekViewController.swift in Sources */,
+				69A6670D1BA42DA500289546 /* AppDelegate.swift in Sources */,
+				69A667501BA42EE100289546 /* AnimeListWeekViewInterface.swift in Sources */,
+				69A6674E1BA42EE100289546 /* AnimeListWeekPresenter.swift in Sources */,
+				69A6674B1BA42EE100289546 /* AnimeListWeekInteractorIO.swift in Sources */,
+				69A6674D1BA42EE100289546 /* AnimeListWeekNetworkController.swift in Sources */,
+				69A6674C1BA42EE100289546 /* AnimeListWeekModuleInterface.swift in Sources */,
+				69A667511BA42EE100289546 /* AnimeListWeekWireframe.swift in Sources */,
+				69A6674A1BA42EE100289546 /* AnimeListWeekInteractor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69A667181BA42DA500289546 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69A667231BA42DA500289546 /* AniMeeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		69A6671E1BA42DA500289546 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69A667061BA42DA500289546 /* AniMee */;
+			targetProxy = 69A6671D1BA42DA500289546 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		69A667101BA42DA500289546 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69A667111BA42DA500289546 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		69A667151BA42DA500289546 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69A667161BA42DA500289546 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		69A667241BA42DA500289546 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		69A667251BA42DA500289546 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		69A667271BA42DA500289546 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 148DC8F13349F78BF0248601 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AniMee/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		69A667281BA42DA500289546 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEA306702F055D2D3B9DA292 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = AniMee/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		69A6672A1BA42DA500289546 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AniMeeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AniMee.app/AniMee";
+			};
+			name = Debug;
+		};
+		69A6672B1BA42DA500289546 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AniMeeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AniMee.app/AniMee";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		69A667021BA42DA500289546 /* Build configuration list for PBXProject "AniMee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69A667241BA42DA500289546 /* Debug */,
+				69A667251BA42DA500289546 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69A667261BA42DA500289546 /* Build configuration list for PBXNativeTarget "AniMee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69A667271BA42DA500289546 /* Debug */,
+				69A667281BA42DA500289546 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69A667291BA42DA500289546 /* Build configuration list for PBXNativeTarget "AniMeeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69A6672A1BA42DA500289546 /* Debug */,
+				69A6672B1BA42DA500289546 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 69A666FF1BA42DA500289546 /* Project object */;
+}

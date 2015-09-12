@@ -1,0 +1,23 @@
+PODS:
+  - Alamofire (2.0.0)
+  - NSLogger (1.5.1):
+    - NSLogger/Standard (= 1.5.1)
+  - NSLogger/Standard (1.5.1)
+  - ObjectMapper (0.16)
+  - PromiseKit/CorePromise (2.2.1)
+  - PromiseKit/Swift/Promise (2.2.1):
+    - PromiseKit/CorePromise
+
+DEPENDENCIES:
+  - Alamofire
+  - NSLogger
+  - ObjectMapper (~> 0.9)
+  - PromiseKit/Swift/Promise
+
+SPEC CHECKSUMS:
+  Alamofire: 2f13548b29d25a58ecd91c9225fb51493e2b782b
+  NSLogger: 5ed223a2436df96244e033be750656dacdeec034
+  ObjectMapper: 86915ae0d902de94e7bfda8980a580fda931b5f8
+  PromiseKit: 9c92257e39abf4b634533d44268592dfc6e4b5c2
+
+COCOAPODS: 0.38.2
