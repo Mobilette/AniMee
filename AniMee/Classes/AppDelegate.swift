@@ -14,8 +14,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(
+        application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?
+        ) -> Bool
+    {
         // Override point for customization after application launch.
+        return true
+    }
+    
+    func authorizeAnilistAPIService()
+    {
+        AnilistAPIService.sharedInstance.authorize()
+            .then { animeAPIServiceSuccessHandler -> Void in
+                println(animeAPIServiceSuccessHandler)
+            }
+            .catch { error -> Void in
+                println(error)
+        }
+    }
+    
+    func application(
+        application: UIApplication,
+        openURL url: NSURL,
+        sourceApplication: String?,
+        annotation: AnyObject?
+        ) -> Bool
+    {
+        if (url.host == "oauth-callback") {
+            if (url.path!.hasPrefix("/animee")) {
+                AnilistAPIService.sharedInstance.handleAuthorizingWithOpenURL(url)
+            }
+        }
         return true
     }
 
