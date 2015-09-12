@@ -9,6 +9,8 @@
 import Foundation
 import OAuthSwift
 import PromiseKit
+import Security
+import MBLogger
 
 protocol OAuthService
 {
@@ -51,6 +53,7 @@ class AnilistAuthAPIService: OAuthService
                 params: ["grant_type": "authorization_code"],
                 success: { (credential, response, parameters) -> Void in
                     // TODO: handle errors
+                    AnilistAuthAPIService.storeToKeychain(credential, consumerKey: Anilist.ConsumerKey.rawValue)
                     fullfil((credential: credential, response: response, parameters: parameters))
                 },
                 failure: { (error) -> Void in
@@ -62,6 +65,53 @@ class AnilistAuthAPIService: OAuthService
     func handleAuthorizingWithOpenURL(url: NSURL)
     {
         OAuth2Swift.handleOpenURL(url)
+    }
+    
+    // MARK: - Archiving
+    
+    class func storeToKeychain(credential: OAuthSwiftCredential, consumerKey: String) -> NSError?
+    {
+        let data = NSKeyedArchiver.archivedDataWithRootObject(credential)
+        var query = [
+            "\(kSecClass)"          : "\(kSecClassGenericPassword)",
+            "\(kSecAttrAccount)"    : consumerKey,
+            "\(kSecValueData)"      : data
+            ] as NSDictionary
+        
+        SecItemDelete(query as CFDictionaryRef)
+        let status: OSStatus = SecItemAdd(query as CFDictionaryRef, nil)
+        if status != 0 {
+            let error = NSError(domain: NSOSStatusErrorDomain, code: Int(status), userInfo: nil)
+            MBLog.error(MBLog.Level.High, object: error)
+            return error
+        }
+        MBLog.service(MBLog.Level.High, object: "Stored credential (\(credential)) to Keychain")
+        return nil
+    }
+    
+    class func retreiveCredential(consumerKey: String) -> (OAuthSwiftCredential?, NSError?)
+    {
+        var searchQuery = [
+            "\(kSecClass)"          : "\(kSecClassGenericPassword)",
+            "\(kSecAttrAccount)"    : consumerKey,
+            "\(kSecReturnData)"     : true
+            ] as NSDictionary
+        
+        var result :Unmanaged<AnyObject>?
+        let status = SecItemCopyMatching(searchQuery, &result)
+        if status != 0 {
+            let error = NSError(domain: NSOSStatusErrorDomain, code: Int(status), userInfo: nil)
+            MBLog.error(MBLog.Level.High, object: error)
+            return (nil, error)
+        }
+        if let opaque = result?.toOpaque() {
+            let retrievedData = Unmanaged<NSData>.fromOpaque(opaque).takeUnretainedValue()
+            var credential = NSKeyedUnarchiver.unarchiveObjectWithData(retrievedData) as? OAuthSwiftCredential
+            return (credential, nil)
+        }
+        let badResultsError = AnilistAuthAPIError.Serialization("Can not take unretained value from unmanaged object.").error
+        MBLog.error(MBLog.Level.High, object: badResultsError)
+        return (nil, badResultsError)
     }
     
     // MARK: - Type

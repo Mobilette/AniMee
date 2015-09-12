@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NSLogger
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,8 +20,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?
         ) -> Bool
     {
+        self.startNSLogger()
+        self.authorizeAnilistAPIService()
         // Override point for customization after application launch.
         return true
+    }
+    
+    private func startNSLogger()
+    {
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true);
+        let file = "\(paths.first!)/loggerdata"
+        var identifier = NSBundle.mainBundle().objectForInfoDictionaryKey(kCFBundleNameKey as String) as! String
+        let deviceUUID = UIDevice.currentDevice().identifierForVendor.UUIDString
+        identifier += "-\(deviceUUID)"
+        
+        let logger = LoggerInit()
+        LoggerSetBufferFile(logger, file)
+        LoggerSetOptions(logger, UInt32(kLoggerOption_BrowseBonjour | kLoggerOption_BrowseOnlyLocalDomain))
+        LoggerSetupBonjour(logger, nil, identifier)
+        LoggerStart(nil)
+        println("Start NSLogger with identifier: \(identifier)")
     }
     
     func authorizeAnilistAPIService()
@@ -28,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AnilistAPIService.sharedInstance.authorize()
             .then { animeAPIServiceSuccessHandler -> Void in
                 println(animeAPIServiceSuccessHandler)
+                AnilistAPIService.sharedInstance.fetchAnimeEpisodes()
             }
             .catch { error -> Void in
                 println(error)

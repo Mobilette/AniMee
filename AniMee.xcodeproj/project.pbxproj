@@ -24,6 +24,8 @@
 		69FD7D0D1BA479850095DDDB /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD7D0C1BA479850095DDDB /* RouterProtocol.swift */; };
 		69FD7D101BA47AC00095DDDB /* AnilistAuthAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD7D0F1BA47AC00095DDDB /* AnilistAuthAPIService.swift */; };
 		69FD7D121BA4877F0095DDDB /* AnimeAPIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD7D111BA4877F0095DDDB /* AnimeAPIServiceProtocol.swift */; };
+		69FD7D151BA498310095DDDB /* AnimeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD7D141BA498310095DDDB /* AnimeRouter.swift */; };
+		69FD7D171BA4BAFF0095DDDB /* AnilistAnimeAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD7D161BA4BAFF0095DDDB /* AnilistAnimeAPIService.swift */; };
 		D41402EAD94AB62B0E93FEF5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E02E5D29F9FC8FCD24E405 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,8 @@
 		69FD7D0C1BA479850095DDDB /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		69FD7D0F1BA47AC00095DDDB /* AnilistAuthAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnilistAuthAPIService.swift; sourceTree = "<group>"; };
 		69FD7D111BA4877F0095DDDB /* AnimeAPIServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeAPIServiceProtocol.swift; sourceTree = "<group>"; };
+		69FD7D141BA498310095DDDB /* AnimeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeRouter.swift; sourceTree = "<group>"; };
+		69FD7D161BA4BAFF0095DDDB /* AnilistAnimeAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnilistAnimeAPIService.swift; sourceTree = "<group>"; };
 		CEA306702F055D2D3B9DA292 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E2E02E5D29F9FC8FCD24E405 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -209,6 +213,7 @@
 		69FD7D091BA479420095DDDB /* Anilist */ = {
 			isa = PBXGroup;
 			children = (
+				69FD7D131BA498180095DDDB /* Anime */,
 				69FD7D0E1BA47A9F0095DDDB /* Auth */,
 				69FD7D0A1BA479630095DDDB /* AnilistAPIService.swift */,
 				69FD7D111BA4877F0095DDDB /* AnimeAPIServiceProtocol.swift */,
@@ -222,6 +227,15 @@
 				69FD7D0F1BA47AC00095DDDB /* AnilistAuthAPIService.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		69FD7D131BA498180095DDDB /* Anime */ = {
+			isa = PBXGroup;
+			children = (
+				69FD7D141BA498310095DDDB /* AnimeRouter.swift */,
+				69FD7D161BA4BAFF0095DDDB /* AnilistAnimeAPIService.swift */,
+			);
+			path = Anime;
 			sourceTree = "<group>";
 		};
 		BC0B86E87CD06F6D1CE6F6D7 /* Pods */ = {
@@ -395,7 +409,9 @@
 				69A6674F1BA42EE100289546 /* AnimeListWeekViewController.swift in Sources */,
 				69FD7D0B1BA479630095DDDB /* AnilistAPIService.swift in Sources */,
 				69A6670D1BA42DA500289546 /* AppDelegate.swift in Sources */,
+				69FD7D151BA498310095DDDB /* AnimeRouter.swift in Sources */,
 				69FD7D121BA4877F0095DDDB /* AnimeAPIServiceProtocol.swift in Sources */,
+				69FD7D171BA4BAFF0095DDDB /* AnilistAnimeAPIService.swift in Sources */,
 				69A667501BA42EE100289546 /* AnimeListWeekViewInterface.swift in Sources */,
 				69A6674E1BA42EE100289546 /* AnimeListWeekPresenter.swift in Sources */,
 				69A6674B1BA42EE100289546 /* AnimeListWeekInteractorIO.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  AnilistAPIService.swift
+//  AnilistAnimeAPIService.swift
 //  AniMee
 //
 //  Created by Romain ASNAR on 9/12/15.
@@ -7,48 +7,56 @@
 //
 
 import Foundation
+import Alamofire
 import PromiseKit
 import MBLogger
 
-class AnilistAPIService: AnimeAPIServiceProtocol
+class AnilistAnimeAPIService
 {
-    // MARK: - Property
-    
-    static let sharedInstance = AnilistAPIService()
-    private lazy var oauthService: OAuthService = AnilistAuthAPIService()
-    
     // MARK: - Request
-    
-    func authorize() -> Promise<AnimeAPIServiceSuccessHandler>
+
+    class func fetchAnimeEpisodes() -> Promise<String>
     {
-        return Promise<AnimeAPIServiceSuccessHandler> { fullfil, reject in
-            // TODO: probably a bug due to swift compiler
-            self.oauthService.authorize().then { tokenSuccessHandler -> Void in
-                fullfil((
-                    credential: tokenSuccessHandler.credential,
-                    response: tokenSuccessHandler.response,
-                    parameters: tokenSuccessHandler.parameters
-                ))
-            }
-                .catch { error -> Void in
-                    reject(error)
+        return Promise<String> { fullfil, reject in
+            let animeRouter = AnimeRouter.Index()
+            let request = Alamofire.request(animeRouter)
+                .validate()
+                .responseString { (request, response, JSONString, error) -> Void in
+                    if let statusCode = response?.statusCode {
+                        switch statusCode {
+                        case 200...299:
+                            if let string = JSONString {
+                                MBLog.network(MBLog.Level.High, object: "Did fetch anime episodes: \(string).")
+                                fullfil(string)
+                            }
+                            else {
+                                let missingDatasError = AnilistAnimeAPIError.MissingData(animeRouter).error
+                                MBLog.error(MBLog.Level.High, object: missingDatasError)
+                                reject(missingDatasError)
+                            }
+                        case 401:
+                            let unauthorizedError = AnilistAnimeAPIError.Unauthorized(animeRouter).error
+                            MBLog.error(MBLog.Level.High, object: unauthorizedError)
+                            reject(unauthorizedError)
+                        default:
+                            if let JSONError = error {
+                                MBLog.error(MBLog.Level.High, object: error)
+                                reject(JSONError)
+                            }
+                            else {
+                                let missingDatasError = AnilistAnimeAPIError.Unknown(animeRouter).error
+                                MBLog.error(MBLog.Level.High, object: missingDatasError)
+                                reject(missingDatasError)
+                            }
+                        }
+                    }
             }
         }
-    }
-    
-    func handleAuthorizingWithOpenURL(url: NSURL)
-    {
-        self.oauthService.handleAuthorizingWithOpenURL(url)
-    }
-
-    func fetchAnimeEpisodes() -> Promise<String>
-    {
-        return AnilistAnimeAPIService.fetchAnimeEpisodes()
     }
 
     // MARK: - Type
     
-    enum AnilistAPIError
+    enum AnilistAnimeAPIError
     {
         case Unknown(RouterProtocol)
         case Unauthorized(RouterProtocol)
