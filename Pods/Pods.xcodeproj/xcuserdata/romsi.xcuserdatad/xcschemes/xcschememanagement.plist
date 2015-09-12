@@ -9,7 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MBLogger.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>NSLogger.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>OAuthSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,12 +42,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0B550156C5847C125DCD19B276F243E3</key>
+		<key>0FA42FC0CDC92AA6B2F3B796BAA9FE2B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>116BBF532574F9541C43FB344BA3B66E</key>
+		<key>2241F3F946F0823BE1A31A44A8DC5BA3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B744282FBC25F6B46822822D092BC48</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>61D15D16F61AF7E06F2170324C0BF6B6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,12 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>953C573D25E17B64A92F38508E1D9FA6</key>
+		<key>AB4C08FEFB30CB579CE4CC507E4BB5D3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C271EEDEEB7A7375902A8355F3EBEA0E</key>
+		<key>E1AA11C572910290094CCA02D60CA832</key>
 		<dict>
 			<key>primary</key>
 			<true/>

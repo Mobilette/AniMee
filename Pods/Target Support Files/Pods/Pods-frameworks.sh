@@ -53,13 +53,17 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods/Alamofire.framework'
+  install_framework 'Pods/MBLogger.framework'
   install_framework 'Pods/NSLogger.framework'
+  install_framework 'Pods/OAuthSwift.framework'
   install_framework 'Pods/ObjectMapper.framework'
   install_framework 'Pods/PromiseKit.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods/Alamofire.framework'
+  install_framework 'Pods/MBLogger.framework'
   install_framework 'Pods/NSLogger.framework'
+  install_framework 'Pods/OAuthSwift.framework'
   install_framework 'Pods/ObjectMapper.framework'
   install_framework 'Pods/PromiseKit.framework'
 fi
