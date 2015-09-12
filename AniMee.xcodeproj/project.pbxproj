@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		359148FF1BA496B600DEC373 /* AnimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359148FE1BA496B600DEC373 /* AnimeCollectionViewCell.swift */; };
 		69A6670D1BA42DA500289546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A6670C1BA42DA500289546 /* AppDelegate.swift */; };
 		69A667121BA42DA500289546 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69A667101BA42DA500289546 /* Main.storyboard */; };
 		69A667141BA42DA500289546 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69A667131BA42DA500289546 /* Images.xcassets */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		148DC8F13349F78BF0248601 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		359148FE1BA496B600DEC373 /* AnimeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeCollectionViewCell.swift; sourceTree = "<group>"; };
 		69A667071BA42DA500289546 /* AniMee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AniMee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69A6670B1BA42DA500289546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69A6670C1BA42DA500289546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		359148FD1BA4960D00DEC373 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				359148FE1BA496B600DEC373 /* AnimeCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		69A666FE1BA42DA500289546 = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +186,7 @@
 		69A667311BA42E0800289546 /* Week */ = {
 			isa = PBXGroup;
 			children = (
+				359148FD1BA4960D00DEC373 /* Cell */,
 				69A667421BA42EE100289546 /* AnimeListWeekInteractor.swift */,
 				69A667431BA42EE100289546 /* AnimeListWeekInteractorIO.swift */,
 				69A667441BA42EE100289546 /* AnimeListWeekModuleInterface.swift */,
@@ -365,6 +376,7 @@
 				69A6674C1BA42EE100289546 /* AnimeListWeekModuleInterface.swift in Sources */,
 				69A667511BA42EE100289546 /* AnimeListWeekWireframe.swift in Sources */,
 				69A6674A1BA42EE100289546 /* AnimeListWeekInteractor.swift in Sources */,
+				359148FF1BA496B600DEC373 /* AnimeCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
