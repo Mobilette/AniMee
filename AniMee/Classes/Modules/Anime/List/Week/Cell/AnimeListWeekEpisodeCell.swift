@@ -14,6 +14,9 @@ class AnimeListWeekEpisodeCell: UICollectionViewCell
     
     var imageURL: NSURL? = nil {
         didSet {
+            if self.animeImageView.layer.cornerRadius <= 0 {
+                self.animeImageView.layer.cornerRadius = CGRectGetHeight(self.bounds) / 2
+            }
             if let url = imageURL {
                 self.animeImageView.image = UIImage()
                 ImageAPIService.fetchImage(url).then { [unowned self] data -> Void in

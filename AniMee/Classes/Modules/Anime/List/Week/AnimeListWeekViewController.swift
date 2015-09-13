@@ -19,12 +19,13 @@ class AnimeListWeekViewController:
     private var dailyEpisodes: [AnimeListWeekViewItem] = []
     
     var presenter: AnimeListWeekModuleInterface? = nil
-
+    var sizeCell: CGSize = CGSizeZero
 	// MARK: - Life cycle
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.sizeCell = self.sizeForCell()
         self.presenter?.updateView()
     }
 
@@ -98,8 +99,31 @@ class AnimeListWeekViewController:
             return headerSize
         }
         else {
-            return CGSizeMake(50, 50)
+            return self.sizeCell
         }
+    }
+    
+    // MARK: - Anime list week view interface
+    
+    func setWeeklyEpisodeList(
+        animeListWeekViewItems: [AnimeListWeekViewItem]
+        )
+    {
+        self.dailyEpisodes = animeListWeekViewItems
+        self.collectionView?.reloadData()
+    }
+    
+    // MARK: - Collection view cell
+    
+    private func sizeForCell() -> CGSize
+    {
+        if let collectionView = self.collectionView {
+            let maxCells: CGFloat = 4
+            let width = CGRectGetWidth(collectionView.bounds) / maxCells
+            let height = width - 10
+            return CGSizeMake(width, height)
+        }
+        return CGSizeZero
     }
     
     private func isHeaderCell(
@@ -136,16 +160,6 @@ class AnimeListWeekViewController:
             return dailyEpisode.episodes[index]
         }
         return nil
-    }
-    
-    // MARK: - Anime list week view interface
-    
-    func setWeeklyEpisodeList(
-        animeListWeekViewItems: [AnimeListWeekViewItem]
-        )
-    {
-        self.dailyEpisodes = animeListWeekViewItems
-        self.collectionView?.reloadData()
     }
 }
 
