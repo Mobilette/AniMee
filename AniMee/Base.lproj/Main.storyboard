@@ -14,10 +14,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="d6J-fD-TFR">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="94" height="109"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="42"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AnimeListWeekHeaderCell" id="dk5-va-Wqr" customClass="AnimeListWeekHeaderCell" customModule="AniMee" customModuleProvider="target">
@@ -51,30 +51,33 @@
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="94" height="109"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m4I-mB-ShO">
-                                            <rect key="frame" x="5" y="0.0" width="50" height="50"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="m4I-mB-ShO">
+                                            <rect key="frame" x="5" y="0.0" width="84" height="84"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0H2-sH-4NU">
+                                            <rect key="frame" x="8" y="84" width="78" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="83k-z3-4L2"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="0H2-sH-4NU" secondAttribute="trailing" id="0Ei-ml-k2B"/>
                                     <constraint firstAttribute="trailing" secondItem="m4I-mB-ShO" secondAttribute="trailing" constant="5" id="5Ar-Xm-TiF"/>
                                     <constraint firstItem="m4I-mB-ShO" firstAttribute="top" secondItem="VmI-5f-q31" secondAttribute="top" id="5QH-wJ-cjb"/>
-                                    <constraint firstItem="m4I-mB-ShO" firstAttribute="leading" secondItem="VmI-5f-q31" secondAttribute="leading" id="Pdq-Gi-aDH"/>
+                                    <constraint firstItem="0H2-sH-4NU" firstAttribute="top" secondItem="m4I-mB-ShO" secondAttribute="bottom" id="KVl-sp-zSK"/>
+                                    <constraint firstAttribute="bottom" secondItem="0H2-sH-4NU" secondAttribute="bottom" id="Rol-XP-gic"/>
                                     <constraint firstItem="m4I-mB-ShO" firstAttribute="leading" secondItem="VmI-5f-q31" secondAttribute="leading" constant="5" id="c9B-RB-Aon"/>
-                                    <constraint firstAttribute="bottom" secondItem="m4I-mB-ShO" secondAttribute="bottom" id="hxb-t7-mlQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="m4I-mB-ShO" secondAttribute="trailing" id="oqz-CA-c0P"/>
+                                    <constraint firstItem="0H2-sH-4NU" firstAttribute="leading" secondItem="VmI-5f-q31" secondAttribute="leadingMargin" id="lDy-p2-3Lb"/>
                                 </constraints>
-                                <size key="customSize" width="60" height="50"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Pdq-Gi-aDH"/>
-                                        <exclude reference="oqz-CA-c0P"/>
-                                    </mask>
-                                </variation>
                                 <connections>
                                     <outlet property="animeImageView" destination="m4I-mB-ShO" id="hm7-tt-e59"/>
                                 </connections>

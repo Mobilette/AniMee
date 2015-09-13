@@ -120,7 +120,7 @@ class AnimeListWeekViewController:
         if let collectionView = self.collectionView {
             let maxCells: CGFloat = 4
             let width = CGRectGetWidth(collectionView.bounds) / maxCells
-            let height = width - 10
+            let height = width + 15
             return CGSizeMake(width, height)
         }
         return CGSizeZero
