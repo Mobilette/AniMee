@@ -9,7 +9,6 @@
 import Foundation
 import PromiseKit
 import MBLogger
-import OAuthSwift
 
 class AnilistAPIService: AnimeAPIServiceProtocol
 {
@@ -20,9 +19,9 @@ class AnilistAPIService: AnimeAPIServiceProtocol
     
     // MARK: - Request
     
-    func authorize() -> Promise<OAuthSwiftCredential>
+    func authorize() -> Promise<AnilistAuthCredential>
     {
-        return Promise<OAuthSwiftCredential> { fullfil, reject in
+        return Promise<AnilistAuthCredential> { fullfil, reject in
             // TODO: probably a bug due to swift compiler
             self.oauthService.authorize().then { credential -> Void in
                 fullfil(credential)
@@ -36,11 +35,6 @@ class AnilistAPIService: AnimeAPIServiceProtocol
     private func isAuthorized() -> Bool
     {
         return false
-    }
-    
-    func handleAuthorizingWithOpenURL(url: NSURL)
-    {
-        self.oauthService.handleAuthorizingWithOpenURL(url)
     }
 
     func fetchAnimeEpisodes() -> Promise<String>
