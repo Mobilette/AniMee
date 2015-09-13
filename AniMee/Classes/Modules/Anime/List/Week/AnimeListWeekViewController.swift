@@ -39,7 +39,7 @@ class AnimeListWeekViewController:
     {
         let monday = AnimeListWeekViewItem()
         monday.title = "Lundi - 04/06"
-        monday.episodes = ["one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg"]
+        monday.episodes = ["one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg"]
         let tuesday = AnimeListWeekViewItem()
         tuesday.title = "Mardi - 05/06"
         tuesday.episodes = ["one_piece.jpeg"]
@@ -58,6 +58,9 @@ class AnimeListWeekViewController:
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         let dailyEpisode = self.dailyEpisodes[section]
+        if dailyEpisode.episodes.count == 1 {
+            dailyEpisode.episodes.append("")
+        }
         return dailyEpisode.episodes.count + 1
     }
     
@@ -93,11 +96,11 @@ class AnimeListWeekViewController:
         ) -> CGSize
     {
         if self.isHeaderCell(forIndexPath: indexPath) {
-            let headerSize = CGSizeMake(CGRectGetWidth( collectionView.bounds), 30)
+            let headerSize = CGSizeMake(CGRectGetWidth( collectionView.bounds), 50)
             return headerSize
         }
         else {
-            return CGSizeMake(40, 40)
+            return CGSizeMake(50, 50)
         }
     }
     
