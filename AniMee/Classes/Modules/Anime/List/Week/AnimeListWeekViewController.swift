@@ -19,13 +19,14 @@ class AnimeListWeekViewController:
     private var dailyEpisodes: [AnimeListWeekViewItem] = []
     
     var presenter: AnimeListWeekModuleInterface? = nil
-
+    var widthCell: CGFloat = 0
 	// MARK: - Life cycle
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
-//        self.dailyEpisodes = self.defaultDailyEpisode()
+        self.dailyEpisodes = self.defaultDailyEpisode()
+        self.widthCellSize()
         self.presenter?.updateView()
     }
 
@@ -35,16 +36,16 @@ class AnimeListWeekViewController:
         // Dispose of any resources that can be recreated.
     }
     
-//    private func defaultDailyEpisode() -> [AnimeListWeekViewItem]
-//    {
-//        let monday = AnimeListWeekViewItem()
-//        monday.title = "Lundi - 04/06"
-//        monday.episodes = ["one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg"]
-//        let tuesday = AnimeListWeekViewItem()
-//        tuesday.title = "Mardi - 05/06"
-//        tuesday.episodes = ["one_piece.jpeg"]
-//        return [monday, tuesday]
-//    }
+    private func defaultDailyEpisode() -> [AnimeListWeekViewItem]
+    {
+        let monday = AnimeListWeekViewItem()
+        monday.title = "Lundi - 04/06"
+        monday.episodes = ["one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg"]
+        let tuesday = AnimeListWeekViewItem()
+        tuesday.title = "Mardi - 05/06"
+        tuesday.episodes = ["one_piece.jpeg"]
+        return [monday, tuesday]
+    }
     
     // MARK: - Collection view data source
     
@@ -106,8 +107,13 @@ class AnimeListWeekViewController:
             return headerSize
         }
         else {
-            return CGSizeMake(50, 50)
+            return CGSizeMake(self.widthCell, 50)
         }
+    }
+    
+    private func widthCellSize()
+    {
+        self.widthCell = (self.view.frame.size.width - 30) / 6.0
     }
     
     private func isHeaderCell(
