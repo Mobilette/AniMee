@@ -25,7 +25,6 @@ class AnimeListWeekViewController:
     override func viewDidLoad()
     {
         super.viewDidLoad()
-//        self.dailyEpisodes = self.defaultDailyEpisode()
         self.presenter?.updateView()
     }
 
@@ -34,17 +33,6 @@ class AnimeListWeekViewController:
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-//    private func defaultDailyEpisode() -> [AnimeListWeekViewItem]
-//    {
-//        let monday = AnimeListWeekViewItem()
-//        monday.title = "Lundi - 04/06"
-//        monday.episodes = ["one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg"]
-//        let tuesday = AnimeListWeekViewItem()
-//        tuesday.title = "Mardi - 05/06"
-//        tuesday.episodes = ["one_piece.jpeg"]
-//        return [monday, tuesday]
-//    }
     
     // MARK: - Collection view data source
     
