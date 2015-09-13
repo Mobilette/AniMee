@@ -19,13 +19,14 @@ class AnimeListWeekViewController:
     private var dailyEpisodes: [AnimeListWeekViewItem] = []
     
     var presenter: AnimeListWeekModuleInterface? = nil
-
+    var sizeCell: CGSize = CGSizeZero
 	// MARK: - Life cycle
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
-//        self.dailyEpisodes = self.defaultDailyEpisode()
+        self.dailyEpisodes = self.defaultDailyEpisode()
+        self.sizeCell = self.sizeForCell()
         self.presenter?.updateView()
     }
 
@@ -35,16 +36,16 @@ class AnimeListWeekViewController:
         // Dispose of any resources that can be recreated.
     }
     
-//    private func defaultDailyEpisode() -> [AnimeListWeekViewItem]
-//    {
-//        let monday = AnimeListWeekViewItem()
-//        monday.title = "Lundi - 04/06"
-//        monday.episodes = ["one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg"]
-//        let tuesday = AnimeListWeekViewItem()
-//        tuesday.title = "Mardi - 05/06"
-//        tuesday.episodes = ["one_piece.jpeg"]
-//        return [monday, tuesday]
-//    }
+    private func defaultDailyEpisode() -> [AnimeListWeekViewItem]
+    {
+        let monday = AnimeListWeekViewItem()
+        monday.title = "Lundi - 04/06"
+        monday.episodes = ["one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg"]
+        let tuesday = AnimeListWeekViewItem()
+        tuesday.title = "Mardi - 05/06"
+        tuesday.episodes = ["one_piece.jpeg"]
+        return [monday, tuesday]
+    }
     
     // MARK: - Collection view data source
     
@@ -106,8 +107,31 @@ class AnimeListWeekViewController:
             return headerSize
         }
         else {
-            return CGSizeMake(50, 50)
+            return self.sizeCell
         }
+    }
+    
+    // MARK: - Anime list week view interface
+    
+    func setWeeklyEpisodeList(
+        animeListWeekViewItems: [AnimeListWeekViewItem]
+        )
+    {
+        self.dailyEpisodes = animeListWeekViewItems
+        self.collectionView?.reloadData()
+    }
+    
+    // MARK: - Collection view cell
+    
+    private func sizeForCell() -> CGSize
+    {
+        if let collectionView = self.collectionView {
+            let maxCells: CGFloat = 6.0
+            let width = CGRectGetWidth(collectionView.bounds) / maxCells
+            let height = width - 10
+            return CGSizeMake(width, height)
+        }
+        return CGSizeZero
     }
     
     private func isHeaderCell(
@@ -144,16 +168,6 @@ class AnimeListWeekViewController:
             return dailyEpisode.episodes[index]
         }
         return nil
-    }
-    
-    // MARK: - Anime list week view interface
-    
-    func setWeeklyEpisodeList(
-        animeListWeekViewItems: [AnimeListWeekViewItem]
-        )
-    {
-        self.dailyEpisodes = animeListWeekViewItems
-        self.collectionView?.reloadData()
     }
 }
 
