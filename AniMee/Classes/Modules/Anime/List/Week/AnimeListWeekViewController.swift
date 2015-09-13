@@ -78,14 +78,18 @@ class AnimeListWeekViewController:
         
         let cell: UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier, forIndexPath: indexPath) as! UICollectionViewCell
 
-        let dailyEpisode = self.dailyEpisode(forIndexPath: indexPath)
         switch cellIdentifier {
         case animeListWeekHeaderCellIdentifier:
+            let title = self.dailyEpisode(forIndexPath: indexPath)
             let animeListWeekHeaderCell = cell as! AnimeListWeekHeaderCell
-            animeListWeekHeaderCell.title = dailyEpisode ?? ""
+            animeListWeekHeaderCell.title = title ?? ""
         case animeListWeekEpisodeCellIdentifier:
-            let animeListWeekEpisodeCell = cell as! AnimeListWeekEpisodeCell
-            animeListWeekEpisodeCell.imageName = dailyEpisode ?? ""
+            if let episodeImageURLString = self.dailyEpisode(forIndexPath: indexPath) {
+                let animeListWeekEpisodeCell = cell as! AnimeListWeekEpisodeCell
+                if let url = NSURL(string: episodeImageURLString) {
+                    animeListWeekEpisodeCell.imageURL = url
+                }
+            }
         default:
             break
         }
