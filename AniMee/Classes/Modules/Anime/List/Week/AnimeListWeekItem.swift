@@ -17,7 +17,7 @@ class AnimeListWeekItem:
     var identifier: String? = nil
     var title: String = ""
     var imageURLString: String? = nil
-    var releaseDate: NSDate? = nil
+    var releaseDate: NSDate = NSDate()
 
     // MARK: - Life cycle
 
