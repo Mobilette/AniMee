@@ -25,7 +25,7 @@ class AnimeListWeekViewController:
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.dailyEpisodes = self.defaultDailyEpisode()
+//        self.dailyEpisodes = self.defaultDailyEpisode()
         self.presenter?.updateView()
     }
 
@@ -35,16 +35,16 @@ class AnimeListWeekViewController:
         // Dispose of any resources that can be recreated.
     }
     
-    private func defaultDailyEpisode() -> [AnimeListWeekViewItem]
-    {
-        let monday = AnimeListWeekViewItem()
-        monday.title = "Lundi - 04/06"
-        monday.episodes = ["one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg"]
-        let tuesday = AnimeListWeekViewItem()
-        tuesday.title = "Mardi - 05/06"
-        tuesday.episodes = ["one_piece.jpeg"]
-        return [monday, tuesday]
-    }
+//    private func defaultDailyEpisode() -> [AnimeListWeekViewItem]
+//    {
+//        let monday = AnimeListWeekViewItem()
+//        monday.title = "Lundi - 04/06"
+//        monday.episodes = ["one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg"]
+//        let tuesday = AnimeListWeekViewItem()
+//        tuesday.title = "Mardi - 05/06"
+//        tuesday.episodes = ["one_piece.jpeg"]
+//        return [monday, tuesday]
+//    }
     
     // MARK: - Collection view data source
     
@@ -55,7 +55,10 @@ class AnimeListWeekViewController:
         return self.dailyEpisodes.count
     }
     
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    override func collectionView(
+        collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+        ) -> Int
     {
         let dailyEpisode = self.dailyEpisodes[section]
         if dailyEpisode.episodes.count == 1 {
@@ -64,7 +67,10 @@ class AnimeListWeekViewController:
         return dailyEpisode.episodes.count + 1
     }
     
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+    override func collectionView(
+        collectionView: UICollectionView,
+        cellForItemAtIndexPath indexPath: NSIndexPath
+        ) -> UICollectionViewCell
     {
         let animeListWeekHeaderCellIdentifier = "AnimeListWeekHeaderCell"
         let animeListWeekEpisodeCellIdentifier = "AnimeListWeekEpisodeCell"
@@ -104,7 +110,9 @@ class AnimeListWeekViewController:
         }
     }
     
-    private func isHeaderCell(forIndexPath indexPath: NSIndexPath) -> Bool
+    private func isHeaderCell(
+        forIndexPath indexPath: NSIndexPath
+        ) -> Bool
     {
         var numberOfItems = 0
         let dailyEpisode = self.dailyEpisodes[indexPath.section]
@@ -119,7 +127,9 @@ class AnimeListWeekViewController:
         return false
     }
     
-    private func dailyEpisode(forIndexPath indexPath: NSIndexPath) -> String?
+    private func dailyEpisode(
+        forIndexPath indexPath: NSIndexPath
+        ) -> String?
     {
         var numberOfItems = 0
         let dailyEpisode = self.dailyEpisodes[indexPath.section]
@@ -134,6 +144,16 @@ class AnimeListWeekViewController:
             return dailyEpisode.episodes[index]
         }
         return nil
+    }
+    
+    // MARK: - Anime list week view interface
+    
+    func setWeeklyEpisodeList(
+        animeListWeekViewItems: [AnimeListWeekViewItem]
+        )
+    {
+        self.dailyEpisodes = animeListWeekViewItems
+        self.collectionView?.reloadData()
     }
 }
 

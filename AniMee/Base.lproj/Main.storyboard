@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gaE-Wz-N4k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZoS-BU-rk9">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Anime List Week View Controller-->
@@ -19,61 +20,54 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AnimeListWeekHeaderCell" id="bQW-c5-pcK" customClass="AnimeListWeekHeaderCell" customModule="AniMee" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AnimeListWeekHeaderCell" id="dk5-va-Wqr" customClass="AnimeListWeekHeaderCell" customModule="AniMee" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CzJ-l4-Yhu">
-                                            <rect key="frame" x="0.0" y="0.0" width="536" height="30"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lundi - 04/06" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQ2-HD-rTx">
-                                                    <rect key="frame" x="8" y="4" width="535" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="8" width="125" height="21"/>
-                                                    </variation>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82a-yz-2hP">
+                                            <rect key="frame" x="8" y="0.0" width="584" height="50"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <size key="customSize" width="600" height="30"/>
+                                <constraints>
+                                    <constraint firstItem="82a-yz-2hP" firstAttribute="trailing" secondItem="dk5-va-Wqr" secondAttribute="trailingMargin" id="DWa-zv-dn8"/>
+                                    <constraint firstItem="82a-yz-2hP" firstAttribute="top" secondItem="dk5-va-Wqr" secondAttribute="top" id="GlN-26-4Yb"/>
+                                    <constraint firstItem="82a-yz-2hP" firstAttribute="leading" secondItem="dk5-va-Wqr" secondAttribute="leadingMargin" id="GsE-HL-KqL"/>
+                                    <constraint firstAttribute="bottom" secondItem="82a-yz-2hP" secondAttribute="bottom" id="vCN-Ew-bly"/>
+                                </constraints>
+                                <size key="customSize" width="600" height="50"/>
                                 <connections>
-                                    <outlet property="animeLabel" destination="OQ2-HD-rTx" id="SSd-iq-2CU"/>
+                                    <outlet property="animeLabel" destination="82a-yz-2hP" id="Tr7-cO-s84"/>
                                 </connections>
                             </collectionViewCell>
-                            <collectionViewCell autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" reuseIdentifier="AnimeListWeekEpisodeCell" id="swn-tU-1Gh" customClass="AnimeListWeekEpisodeCell" customModule="AniMee" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AnimeListWeekEpisodeCell" id="VmI-5f-q31" customClass="AnimeListWeekEpisodeCell" customModule="AniMee" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cdz-T7-EB6">
-                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ph7-Jx-1Do">
-                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="2" y="1" width="72" height="67"/>
-                                                    </variation>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m4I-mB-ShO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <size key="customSize" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstItem="m4I-mB-ShO" firstAttribute="top" secondItem="VmI-5f-q31" secondAttribute="top" id="5QH-wJ-cjb"/>
+                                    <constraint firstItem="m4I-mB-ShO" firstAttribute="leading" secondItem="VmI-5f-q31" secondAttribute="leading" id="Pdq-Gi-aDH"/>
+                                    <constraint firstAttribute="bottom" secondItem="m4I-mB-ShO" secondAttribute="bottom" id="hxb-t7-mlQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="m4I-mB-ShO" secondAttribute="trailing" id="oqz-CA-c0P"/>
+                                </constraints>
                                 <connections>
-                                    <outlet property="animeImageView" destination="ph7-Jx-1Do" id="wKh-w0-r3z"/>
+                                    <outlet property="animeImageView" destination="m4I-mB-ShO" id="hm7-tt-e59"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -82,8 +76,27 @@
                             <outlet property="delegate" destination="gaE-Wz-N4k" id="etA-XF-lZX"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="DY2-8h-UK6"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4T8-jj-guI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="593" y="357"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0F4-2k-g21">
+            <objects>
+                <navigationController storyboardIdentifier="AnimeListWeekViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZoS-BU-rk9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7mD-o9-CF0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gaE-Wz-N4k" kind="relationship" relationship="rootViewController" id="Aai-3J-qRs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bHt-Uc-glm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-219" y="357"/>
         </scene>

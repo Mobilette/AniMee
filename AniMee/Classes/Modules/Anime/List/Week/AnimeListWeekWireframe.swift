@@ -29,43 +29,19 @@ class AnimeListWeekWireframe//: StoryboardSegueDelegate
     private var preparedSegue: UIStoryboardSegue? = nil
 
     // MARK: - Presentation
-
-    func prepareInterface(fromSegue segue: UIStoryboardSegue)
+    
+    func presentInterface(fromWindow window: UIWindow)
     {
-        let viewController = segue.destinationViewController as! AnimeListWeekViewController
-        viewController.presenter = self.presenter
-        self.viewController = viewController
-        self.presenter?.view = viewController
-    }
-
-    /*
-    func prepareInterface(fromSegue segue: UIStoryboardSegue)
-    {
-        let navigationViewController = segue.destinationViewController as! UINavigationController
-        if let viewController = navigationViewController.viewControllers.first as? AnimeListWeekViewController {
+        let navigationViewController = self.navigationControllerFromStoryboard()
+        if let viewController = navigationViewController.viewControllers.first as? AnimeListWeekViewController
+        {
             viewController.presenter = self.presenter
             self.viewController = viewController
             self.presenter?.view = viewController
         }
+        window.rootViewController = navigationViewController
     }
-    */
-
-    /*
-    func presentInterface(fromWindow window: UIWindow)
-    {
-    	/*
-        let viewController = self.viewControllerFromStoryboard()
-        */
-
-    	/*
-        let navigationViewController = self.navigationControllerFromStoryboard()
-        if let viewController = navigationViewController.viewControllers.first as? AnimeListWeekViewController
-        */
-
-        viewController.presenter = self.presenter
-        self.presenter?.view = viewController
-    }
-    */
+    
 
     // MARK: - Prepare interface
 
@@ -91,29 +67,16 @@ class AnimeListWeekWireframe//: StoryboardSegueDelegate
     
     // MARK: - Storyboard
     
-    /*
     private func mainStoryboard() -> UIStoryboard
     {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle:NSBundle.mainBundle())
         return storyboard
     }
-    */
     
-    /*
-    private func viewControllerFromStoryboard() -> AnimeListWeekViewController
-    {
-    let storyboard = self.mainStoryboard()
-    let viewController = storyboard.instantiateViewControllerWithIdentifier(AnimeListWeekViewControllerIdentifier) as! AnimeListWeekViewController
-    return viewController
-    }
-    */
-    
-    /*
     private func navigationControllerFromStoryboard() -> UINavigationController
     {
-    let storyboard = self.mainStoryboard()
-    let navigationController = storyboard.instantiateViewControllerWithIdentifier(AnimeListWeekViewControllerIdentifier) as! UINavigationController
-    return navigationController
+        let storyboard = self.mainStoryboard()
+        let navigationController = storyboard.instantiateViewControllerWithIdentifier(AnimeListWeekViewControllerIdentifier) as! UINavigationController
+        return navigationController
     }
-    */
 }

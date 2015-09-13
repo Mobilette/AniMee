@@ -11,6 +11,7 @@
 		359149031BA4BA6400DEC373 /* AnimeListWeekHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359149021BA4BA6400DEC373 /* AnimeListWeekHeaderCell.swift */; };
 		359149051BA4BAD500DEC373 /* AnimeListWeekEpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359149041BA4BAD500DEC373 /* AnimeListWeekEpisodeCell.swift */; };
 		359149081BA4C48300DEC373 /* AnimeListWeekViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359149071BA4C48300DEC373 /* AnimeListWeekViewItem.swift */; };
+		3591490B1BA5B3C200DEC373 /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3591490A1BA5B3C200DEC373 /* RootWireframe.swift */; };
 		69A6670D1BA42DA500289546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A6670C1BA42DA500289546 /* AppDelegate.swift */; };
 		69A667121BA42DA500289546 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69A667101BA42DA500289546 /* Main.storyboard */; };
 		69A667141BA42DA500289546 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69A667131BA42DA500289546 /* Images.xcassets */; };
@@ -43,6 +44,7 @@
 		359149021BA4BA6400DEC373 /* AnimeListWeekHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekHeaderCell.swift; sourceTree = "<group>"; };
 		359149041BA4BAD500DEC373 /* AnimeListWeekEpisodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekEpisodeCell.swift; sourceTree = "<group>"; };
 		359149071BA4C48300DEC373 /* AnimeListWeekViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekViewItem.swift; sourceTree = "<group>"; };
+		3591490A1BA5B3C200DEC373 /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootWireframe.swift; sourceTree = "<group>"; };
 		69A667071BA42DA500289546 /* AniMee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AniMee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69A6670B1BA42DA500289546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69A6670C1BA42DA500289546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,14 @@
 				359149071BA4C48300DEC373 /* AnimeListWeekViewItem.swift */,
 			);
 			name = Entity;
+			sourceTree = "<group>";
+		};
+		359149091BA5B33D00DEC373 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				3591490A1BA5B3C200DEC373 /* RootWireframe.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 		69A666FE1BA42DA500289546 = {
@@ -171,6 +181,7 @@
 		69A6672D1BA42DD100289546 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				359149091BA5B33D00DEC373 /* Root */,
 				69A6672F1BA42DF000289546 /* Anime */,
 			);
 			path = Modules;
@@ -396,6 +407,7 @@
 				69A6674C1BA42EE100289546 /* AnimeListWeekModuleInterface.swift in Sources */,
 				69A667511BA42EE100289546 /* AnimeListWeekWireframe.swift in Sources */,
 				69A6674A1BA42EE100289546 /* AnimeListWeekInteractor.swift in Sources */,
+				3591490B1BA5B3C200DEC373 /* RootWireframe.swift in Sources */,
 				359149031BA4BA6400DEC373 /* AnimeListWeekHeaderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
