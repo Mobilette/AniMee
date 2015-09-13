@@ -47,8 +47,8 @@ class AnimeListWeekPresenter:
         for animeListWeekItem in animeListWeekItems {
             let animeListWeekViewItem = AnimeListWeekViewItem()
             animeListWeekViewItem.identifier = animeListWeekItem.identifier
-            animeListWeekViewItem.imageURLString = animeListWeekItem.imageURLString
-            animeListWeekViewItem.releaseDate = animeListWeekItem.releaseDate
+            //animeListWeekViewItem.imageURLString = animeListWeekItem.imageURLString
+            //animeListWeekViewItem.releaseDate = animeListWeekItem.releaseDate
             animeListWeekViewItems.append(animeListWeekViewItem)
         }
         return []

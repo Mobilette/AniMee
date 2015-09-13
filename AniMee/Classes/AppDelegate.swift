@@ -15,22 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     static let presenter = AnimeListWeekPresenter()
 
-
     func application(
         application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?
         ) -> Bool
     {
         self.startNSLogger()
-        
-//        let interactor = AnimeListWeekInteractor()
-//        let networkController = AnimeListWeekNetworkController()
-//        interactor.networkController = networkController
-//        interactor.output = AppDelegate.presenter
-//        AppDelegate.presenter.interactor = interactor
-//        
-//        AppDelegate.presenter.updateView()
-        
+        if let window = self.window {
+            let rootWireframe = RootWireframe()
+            rootWireframe.presentRootViewController(fromWindow: window)
+        }
         return true
     }
     

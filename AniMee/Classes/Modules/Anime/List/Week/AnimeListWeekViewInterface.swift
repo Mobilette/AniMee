@@ -8,5 +8,5 @@
 
 protocol AnimeListWeekViewInterface: class
 {
-
+    func setWeeklyEpisodeList(animeListWeekViewItems: [AnimeListWeekViewItem])
 }
