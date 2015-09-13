@@ -10,13 +10,41 @@ import Foundation
 import Alamofire
 import PromiseKit
 
+class ImageCache: NSCache
+{
+    func cacheImageData(imageData: NSData, forURL url: NSURL)
+    {
+        if let urlString = url.absoluteString {
+            self.setObject(imageData, forKey: urlString)
+        }
+    }
+    
+    func cachedImageData(forURL url: NSURL) -> NSData?
+    {
+        if let urlString = url.absoluteString {
+            return self.objectForKey(urlString) as? NSData
+        }
+        return nil
+    }
+}
+
 class ImageAPIService
 {
+    // MARK: - Property
+    
+    static let imageCache: ImageCache = ImageCache()
+    
     // MARK: - Request
     
-    class func fetchImage(url: NSURL) -> Promise<NSData>
+    class func fetchImage(url: NSURL, cacheImage: Bool = true) -> Promise<NSData>
     {
         return Promise<NSData> { fullfil, reject in
+
+            if let cachedImageData = ImageAPIService.imageCache.cachedImageData(forURL: url) {
+                fullfil(cachedImageData)
+                return
+            }
+
             let imageRouter = ImageRouter.FetchImage(url)
             let request = Alamofire.request(imageRouter)
                 .response() { (request, response, data, error) in
@@ -24,6 +52,7 @@ class ImageAPIService
                         switch statusCode {
                         case 200...299:
                             if let imageData = data {
+                                ImageAPIService.imageCache.cacheImageData(imageData, forURL: url)
                                 fullfil(imageData)
                             }
                             else {
