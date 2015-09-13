@@ -29,7 +29,8 @@ class AnimeListWeekInteractor:
         else {
             self.networkController?.fetchAnimeEpisodes()
                 .then { [unowned self] animeEpisodeJSONItems -> Void in
-                    let episodes = self.episodesWithAnimeEpisodeJSONItems(animeEpisodeJSONItems)
+                    let filteredEpisodeJSONItems = self.removeEpisodesWithNoReleaseDate(animeEpisodeJSONItems)
+                    let episodes = self.episodesWithAnimeEpisodeJSONItems(filteredEpisodeJSONItems)
                     self.episodeRepository.removeAllEpisodes()
                     self.episodeRepository.addEpisodes(episodes)
                     let animeListWeekListItems = self.animeListWeekListItemsWithEpisodes(self.episodeRepository.episodes)
@@ -39,6 +40,16 @@ class AnimeListWeekInteractor:
                     self.output?.didFailToFindAnimeEpisodes(error)
             }
         }
+    }
+    
+    // MARK: - Filtering
+    
+    func removeEpisodesWithNoReleaseDate(
+        allEpisodeJSONItems: [AnimeListWeekJSONItem]
+        ) -> [AnimeListWeekJSONItem]
+    {
+        var filteredEpisodeJSONItems :[AnimeListWeekJSONItem] = []
+        return filteredEpisodeJSONItems
     }
 
     // MARK: - Converting raw datas
