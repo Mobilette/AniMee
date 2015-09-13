@@ -25,7 +25,6 @@ class AnimeListWeekViewController:
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.dailyEpisodes = self.defaultDailyEpisode()
         self.sizeCell = self.sizeForCell()
         self.presenter?.updateView()
     }
@@ -34,17 +33,6 @@ class AnimeListWeekViewController:
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    private func defaultDailyEpisode() -> [AnimeListWeekViewItem]
-    {
-        let monday = AnimeListWeekViewItem()
-        monday.title = "Lundi - 04/06"
-        monday.episodes = ["one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg", "one_piece.jpeg"]
-        let tuesday = AnimeListWeekViewItem()
-        tuesday.title = "Mardi - 05/06"
-        tuesday.episodes = ["one_piece.jpeg"]
-        return [monday, tuesday]
     }
     
     // MARK: - Collection view data source
@@ -79,14 +67,18 @@ class AnimeListWeekViewController:
         
         let cell: UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier, forIndexPath: indexPath) as! UICollectionViewCell
 
-        let dailyEpisode = self.dailyEpisode(forIndexPath: indexPath)
         switch cellIdentifier {
         case animeListWeekHeaderCellIdentifier:
+            let title = self.dailyEpisode(forIndexPath: indexPath)
             let animeListWeekHeaderCell = cell as! AnimeListWeekHeaderCell
-            animeListWeekHeaderCell.title = dailyEpisode ?? ""
+            animeListWeekHeaderCell.title = title ?? ""
         case animeListWeekEpisodeCellIdentifier:
-            let animeListWeekEpisodeCell = cell as! AnimeListWeekEpisodeCell
-            animeListWeekEpisodeCell.imageName = dailyEpisode ?? ""
+            if let episodeImageURLString = self.dailyEpisode(forIndexPath: indexPath) {
+                let animeListWeekEpisodeCell = cell as! AnimeListWeekEpisodeCell
+                if let url = NSURL(string: episodeImageURLString) {
+                    animeListWeekEpisodeCell.imageURL = url
+                }
+            }
         default:
             break
         }
@@ -126,7 +118,7 @@ class AnimeListWeekViewController:
     private func sizeForCell() -> CGSize
     {
         if let collectionView = self.collectionView {
-            let maxCells: CGFloat = 6.0
+            let maxCells: CGFloat = 4
             let width = CGRectGetWidth(collectionView.bounds) / maxCells
             let height = width - 10
             return CGSizeMake(width, height)

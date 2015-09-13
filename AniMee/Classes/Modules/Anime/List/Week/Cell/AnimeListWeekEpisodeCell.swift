@@ -12,9 +12,17 @@ class AnimeListWeekEpisodeCell: UICollectionViewCell
 {
     // MARK: - Property
     
-    var imageName: String = "" {
+    var imageURL: NSURL? = nil {
         didSet {
-            self.animeImageView.image = UIImage(named: imageName)
+            if self.animeImageView.layer.cornerRadius <= 0 {
+                self.animeImageView.layer.cornerRadius = CGRectGetHeight(self.bounds) / 2
+            }
+            if let url = imageURL {
+                self.animeImageView.image = UIImage()
+                ImageAPIService.fetchImage(url).then { [unowned self] data -> Void in
+                    self.animeImageView.image = UIImage(data: data)
+                }
+            }
         }
     }
     
