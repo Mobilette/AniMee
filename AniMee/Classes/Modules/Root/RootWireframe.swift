@@ -26,7 +26,7 @@ class RootWireframe
         let interactor = AnimeListWeekInteractor()
         let networkController = AnimeListWeekNetworkController()
         let wireframe = AnimeListWeekWireframe()
-        // interactor.networkController = networkController
+        interactor.networkController = networkController
         interactor.output = presenter
         presenter.interactor = interactor
         presenter.wireframe = wireframe

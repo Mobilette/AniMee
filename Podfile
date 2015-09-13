@@ -4,7 +4,6 @@ platform :ios, '8.0'
 use_frameworks!
 
 pod 'Alamofire', '~> 1.3.1'
-pod 'OAuthSwift', '~> 0.3.4'
 pod 'ObjectMapper', '0.15'
 
 pod 'PromiseKit/Swift/Promise'

@@ -7,19 +7,41 @@
 //
 
 import UIKit
+import NSLogger
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    static let presenter = AnimeListWeekPresenter()
 
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(
+        application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?
+        ) -> Bool
+    {
+        self.startNSLogger()
         if let window = self.window {
             let rootWireframe = RootWireframe()
             rootWireframe.presentRootViewController(fromWindow: window)
         }
         return true
+    }
+    
+    private func startNSLogger()
+    {
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true);
+        let file = "\(paths.first!)/loggerdata"
+        var identifier = NSBundle.mainBundle().objectForInfoDictionaryKey(kCFBundleNameKey as String) as! String
+        let deviceUUID = UIDevice.currentDevice().identifierForVendor.UUIDString
+        identifier += "-\(deviceUUID)"
+        
+        let logger = LoggerInit()
+        LoggerSetBufferFile(logger, file)
+        LoggerSetOptions(logger, UInt32(kLoggerOption_BrowseBonjour | kLoggerOption_BrowseOnlyLocalDomain))
+        LoggerSetupBonjour(logger, nil, identifier)
+        LoggerStart(nil)
+        println("Start NSLogger with identifier: \(identifier)")
     }
 
     func applicationWillResignActive(application: UIApplication) {
