@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		359149011BA4A2E900DEC373 /* one_piece.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 359149001BA4A2E900DEC373 /* one_piece.jpeg */; };
 		359149031BA4BA6400DEC373 /* AnimeListWeekHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359149021BA4BA6400DEC373 /* AnimeListWeekHeaderCell.swift */; };
 		359149051BA4BAD500DEC373 /* AnimeListWeekEpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359149041BA4BAD500DEC373 /* AnimeListWeekEpisodeCell.swift */; };
 		359149081BA4C48300DEC373 /* AnimeListWeekViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359149071BA4C48300DEC373 /* AnimeListWeekViewItem.swift */; };
@@ -57,7 +56,6 @@
 
 /* Begin PBXFileReference section */
 		148DC8F13349F78BF0248601 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		359149001BA4A2E900DEC373 /* one_piece.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = one_piece.jpeg; sourceTree = "<group>"; };
 		359149021BA4BA6400DEC373 /* AnimeListWeekHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekHeaderCell.swift; sourceTree = "<group>"; };
 		359149041BA4BAD500DEC373 /* AnimeListWeekEpisodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekEpisodeCell.swift; sourceTree = "<group>"; };
 		359149071BA4C48300DEC373 /* AnimeListWeekViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekViewItem.swift; sourceTree = "<group>"; };
@@ -188,7 +186,6 @@
 		69A6670A1BA42DA500289546 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				359149001BA4A2E900DEC373 /* one_piece.jpeg */,
 				69A6670B1BA42DA500289546 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -467,7 +464,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				69A667121BA42DA500289546 /* Main.storyboard in Resources */,
-				359149011BA4A2E900DEC373 /* one_piece.jpeg in Resources */,
 				69A667171BA42DA500289546 /* LaunchScreen.xib in Resources */,
 				69A667141BA42DA500289546 /* Images.xcassets in Resources */,
 			);
