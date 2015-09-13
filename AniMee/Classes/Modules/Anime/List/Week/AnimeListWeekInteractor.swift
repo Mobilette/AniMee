@@ -51,16 +51,30 @@ class AnimeListWeekInteractor:
         allEpisodeJSONItems: [AnimeListWeekJSONItem]
         ) -> [AnimeListWeekJSONItem]
     {
-        let today = NSDate()
+        let today = self.dateWithoutTime(NSDate()) ?? NSDate()
         var filteredEpisodeJSONItems :[AnimeListWeekJSONItem] = []
         for episodeJSONItem in allEpisodeJSONItems {
             if let releaseDate = episodeJSONItem.releaseDate {
-                if releaseDate.compare(today) == NSComparisonResult.OrderedDescending {
+                let releaseDateWithoutTime = self.dateWithoutTime(releaseDate) ?? releaseDate
+                let comparaisonToToday = releaseDateWithoutTime.compare(today)
+                if comparaisonToToday == NSComparisonResult.OrderedDescending
+                    || comparaisonToToday == NSComparisonResult.OrderedSame
+                {
                     filteredEpisodeJSONItems.append(episodeJSONItem)
                 }
             }
         }
         return filteredEpisodeJSONItems
+    }
+    
+    // MARK: - Date
+    
+    private func dateWithoutTime(date: NSDate) -> NSDate?
+    {
+        let formatter  = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let formattedDateString = formatter.stringFromDate(date)
+        return formatter.dateFromString(formattedDateString)
     }
 
     // MARK: - Converting raw datas

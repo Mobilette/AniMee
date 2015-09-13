@@ -23,13 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         self.startNSLogger()
         
-//        let interactor = AnimeListWeekInteractor()
-//        let networkController = AnimeListWeekNetworkController()
-//        interactor.networkController = networkController
-//        interactor.output = AppDelegate.presenter
-//        AppDelegate.presenter.interactor = interactor
-//        
-//        AppDelegate.presenter.updateView()
+        let interactor = AnimeListWeekInteractor()
+        let networkController = AnimeListWeekNetworkController()
+        interactor.networkController = networkController
+        interactor.output = AppDelegate.presenter
+        AppDelegate.presenter.interactor = interactor
+        
+        AppDelegate.presenter.updateView()
         
         return true
     }
