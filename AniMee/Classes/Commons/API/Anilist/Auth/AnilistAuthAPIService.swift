@@ -7,15 +7,14 @@
 //
 
 import Foundation
-import OAuthSwift
+import Alamofire
 import PromiseKit
 import Security
 import MBLogger
 
 protocol OAuthService
 {
-    func authorize() -> Promise<OAuthSwiftCredential>
-    func handleAuthorizingWithOpenURL(url: NSURL)
+    func authorize() -> Promise<AnilistAuthCredential>
 }
 
 class AnilistAuthAPIService: OAuthService
@@ -30,45 +29,34 @@ class AnilistAuthAPIService: OAuthService
         case RedirectURI    = "animee-oauth://oauth-callback/animee"
     }
     
-    let oauthService = OAuth2Swift(
-        consumerKey:        Anilist.ConsumerKey.rawValue,
-        consumerSecret:     Anilist.ConsumerSecret.rawValue,
-        authorizeUrl:       "https://anilist.co/api/auth/authorize",
-        accessTokenUrl:     "https://anilist.co/api/auth/access_token",
-        responseType:       "code"
-    )
-    
     // MARK: - Authorize
     
-    func authorize() -> Promise<OAuthSwiftCredential>
+    func authorize() -> Promise<AnilistAuthCredential>
     {
-        return Promise<OAuthSwiftCredential> { fullfil, reject in
-            let callbackURL = NSURL(string: Anilist.RedirectURI.rawValue)
-            self.oauthService.authorizeWithCallbackURL(
-                callbackURL!,
-                scope: "",
-                state: "",
-                params: ["grant_type": "authorization_code"],
-                success: { (credential, response, parameters) -> Void in
-                    // TODO: handle errors
-                    AnilistAuthAPIService.storeToKeychain(credential, consumerKey: Anilist.ConsumerKey.rawValue)
-                    fullfil(credential)
-                },
-                failure: { (error) -> Void in
-                    reject(error)
-            })
+        return Promise<AnilistAuthCredential> { fullfil, reject in
+            let animeRouter = AnilistAuthRouter.Auth("client_credentials", Anilist.ConsumerKey.rawValue, Anilist.ConsumerSecret.rawValue)
+            let request = Alamofire.request(animeRouter)
+                .validate()
+                .responseJSON { (request, response, JSON, error) -> Void in
+                    if let jsonResult = JSON as? [String: AnyObject] {
+                        if let accessToken = jsonResult["access_token"] as? String {
+                            let anilistAuthCredential = AnilistAuthCredential(consumer_key: Anilist.ConsumerKey.rawValue, consumer_secret: Anilist.ConsumerSecret.rawValue, oauth_token: accessToken)
+                            if let error = AnilistAuthAPIService.storeToKeychain(anilistAuthCredential) {
+                                println("ERROR !!!!!!!!")
+                                reject(error)
+                            }
+                            fullfil(anilistAuthCredential)
+                        }
+                    }
+            }
         }
-    }
-    
-    func handleAuthorizingWithOpenURL(url: NSURL)
-    {
-        OAuth2Swift.handleOpenURL(url)
     }
     
     // MARK: - Archiving
     
-    class func storeToKeychain(credential: OAuthSwiftCredential, consumerKey: String) -> NSError?
+    class func storeToKeychain(credential: AnilistAuthCredential) -> NSError?
     {
+        let consumerKey = credential.consumer_key
         let data = NSKeyedArchiver.archivedDataWithRootObject(credential)
         var query = [
             "\(kSecClass)"          : "\(kSecClassGenericPassword)",
@@ -87,7 +75,7 @@ class AnilistAuthAPIService: OAuthService
         return nil
     }
     
-    class func retreiveCredential(consumerKey: String) -> (OAuthSwiftCredential?, NSError?)
+    class func retreiveCredential(consumerKey: String) -> (AnilistAuthCredential?, NSError?)
     {
         var searchQuery = [
             "\(kSecClass)"          : "\(kSecClassGenericPassword)",
@@ -104,7 +92,7 @@ class AnilistAuthAPIService: OAuthService
         }
         if let opaque = result?.toOpaque() {
             let retrievedData = Unmanaged<NSData>.fromOpaque(opaque).takeUnretainedValue()
-            var credential = NSKeyedUnarchiver.unarchiveObjectWithData(retrievedData) as? OAuthSwiftCredential
+            var credential = NSKeyedUnarchiver.unarchiveObjectWithData(retrievedData) as? AnilistAuthCredential
             return (credential, nil)
         }
         let badResultsError = AnilistAuthAPIError.Serialization("Can not take unretained value from unmanaged object.").error

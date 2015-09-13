@@ -5,7 +5,6 @@ PODS:
   - NSLogger (1.5.1):
     - NSLogger/Standard (= 1.5.1)
   - NSLogger/Standard (1.5.1)
-  - OAuthSwift (0.3.7)
   - ObjectMapper (0.15)
   - PromiseKit/CorePromise (2.2.1)
   - PromiseKit/Swift/Promise (2.2.1):
@@ -15,7 +14,6 @@ DEPENDENCIES:
   - Alamofire (~> 1.3.1)
   - MBLogger
   - NSLogger
-  - OAuthSwift (~> 0.3.4)
   - ObjectMapper (= 0.15)
   - PromiseKit/Swift/Promise
 
@@ -23,7 +21,6 @@ SPEC CHECKSUMS:
   Alamofire: e4ab637e3195b645c814b87a652373439e59f2a4
   MBLogger: f365891b06b0694ecef20fc3f0a39c7df782dd3d
   NSLogger: 5ed223a2436df96244e033be750656dacdeec034
-  OAuthSwift: d5a96a1a92329e3b4bb63b682c3e4e89a8698dc8
   ObjectMapper: 0656dc1c155825897e5acfcd25362c6b61786dcb
   PromiseKit: 9c92257e39abf4b634533d44268592dfc6e4b5c2
 

@@ -19,11 +19,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>OAuthSwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,22 +37,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0FA42FC0CDC92AA6B2F3B796BAA9FE2B</key>
+		<key>10DDECFA47B6822C4BFD7D647A9F50F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2241F3F946F0823BE1A31A44A8DC5BA3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5B744282FBC25F6B46822822D092BC48</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>61D15D16F61AF7E06F2170324C0BF6B6</key>
+		<key>58BE340B6BE6C8173C350CD8772DE53F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +52,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AB4C08FEFB30CB579CE4CC507E4BB5D3</key>
+		<key>B347BE251A12F108380C43F350962794</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E1AA11C572910290094CCA02D60CA832</key>
+		<key>C1BC970E0E0BF643C9C76D6F680D496E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E06071F94E14DF4D13C6111E26FDD485</key>
 		<dict>
 			<key>primary</key>
 			<true/>
