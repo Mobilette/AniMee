@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MBLogger
 
 class AnimeListWeekInteractor:
     AnimeListWeekInteractorInput
@@ -29,16 +30,50 @@ class AnimeListWeekInteractor:
         else {
             self.networkController?.fetchAnimeEpisodes()
                 .then { [unowned self] animeEpisodeJSONItems -> Void in
-                    let episodes = self.episodesWithAnimeEpisodeJSONItems(animeEpisodeJSONItems)
+                    let filteredEpisodeJSONItems = self.filterEpisodeByReleaseDate(animeEpisodeJSONItems)
+                    let episodes = self.episodesWithAnimeEpisodeJSONItems(filteredEpisodeJSONItems)
                     self.episodeRepository.removeAllEpisodes()
                     self.episodeRepository.addEpisodes(episodes)
                     let animeListWeekListItems = self.animeListWeekListItemsWithEpisodes(self.episodeRepository.episodes)
+                    MBLog.data(MBLog.Level.High, object: "Did fetch anime episodes [\(animeListWeekListItems.count)]: \(animeListWeekListItems)")
                     self.output?.didFindAnimeEpisodes(animeListWeekListItems)
             }
                 .catch { [unowned self] error -> Void in
                     self.output?.didFailToFindAnimeEpisodes(error)
             }
         }
+    }
+    
+    // MARK: - Filtering
+    
+    func filterEpisodeByReleaseDate(
+        allEpisodeJSONItems: [AnimeListWeekJSONItem]
+        ) -> [AnimeListWeekJSONItem]
+    {
+        let today = self.dateWithoutTime(NSDate()) ?? NSDate()
+        var filteredEpisodeJSONItems :[AnimeListWeekJSONItem] = []
+        for episodeJSONItem in allEpisodeJSONItems {
+            if let releaseDate = episodeJSONItem.releaseDate {
+                let releaseDateWithoutTime = self.dateWithoutTime(releaseDate) ?? releaseDate
+                let comparaisonToToday = releaseDateWithoutTime.compare(today)
+                if comparaisonToToday == NSComparisonResult.OrderedDescending
+                    || comparaisonToToday == NSComparisonResult.OrderedSame
+                {
+                    filteredEpisodeJSONItems.append(episodeJSONItem)
+                }
+            }
+        }
+        return filteredEpisodeJSONItems
+    }
+    
+    // MARK: - Date
+    
+    private func dateWithoutTime(date: NSDate) -> NSDate?
+    {
+        let formatter  = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let formattedDateString = formatter.stringFromDate(date)
+        return formatter.dateFromString(formattedDateString)
     }
 
     // MARK: - Converting raw datas
