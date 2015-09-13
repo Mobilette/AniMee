@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MBLogger
 
 class AnimeListWeekInteractor:
     AnimeListWeekInteractorInput
@@ -29,7 +30,9 @@ class AnimeListWeekInteractor:
         else {
             self.networkController?.fetchAnimeEpisodes()
                 .then { [unowned self] animeEpisodeJSONItems -> Void in
-                    let filteredEpisodeJSONItems = self.removeEpisodesWithNoReleaseDate(animeEpisodeJSONItems)
+                    MBLog.data(MBLog.Level.High, object: "non-filtered episodes[\(animeEpisodeJSONItems.count)]: \(animeEpisodeJSONItems)")
+                    let filteredEpisodeJSONItems = self.filterEpisodeByReleaseDate(animeEpisodeJSONItems)
+                    MBLog.data(MBLog.Level.High, object: "filtered episodes[\(filteredEpisodeJSONItems.count)]: \(filteredEpisodeJSONItems)")
                     let episodes = self.episodesWithAnimeEpisodeJSONItems(filteredEpisodeJSONItems)
                     self.episodeRepository.removeAllEpisodes()
                     self.episodeRepository.addEpisodes(episodes)
@@ -44,11 +47,19 @@ class AnimeListWeekInteractor:
     
     // MARK: - Filtering
     
-    func removeEpisodesWithNoReleaseDate(
+    func filterEpisodeByReleaseDate(
         allEpisodeJSONItems: [AnimeListWeekJSONItem]
         ) -> [AnimeListWeekJSONItem]
     {
+        let today = NSDate()
         var filteredEpisodeJSONItems :[AnimeListWeekJSONItem] = []
+        for episodeJSONItem in allEpisodeJSONItems {
+            if let releaseDate = episodeJSONItem.releaseDate {
+                if releaseDate.compare(today) == NSComparisonResult.OrderedDescending {
+                    filteredEpisodeJSONItems.append(episodeJSONItem)
+                }
+            }
+        }
         return filteredEpisodeJSONItems
     }
 
