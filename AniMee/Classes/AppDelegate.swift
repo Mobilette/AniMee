@@ -7,15 +7,61 @@
 //
 
 import UIKit
+import NSLogger
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    static let presenter = AnimeListWeekPresenter()
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+    func application(
+        application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?
+        ) -> Bool
+    {
+        self.startNSLogger()
+        
+//        let interactor = AnimeListWeekInteractor()
+//        let networkController = AnimeListWeekNetworkController()
+//        interactor.networkController = networkController
+//        interactor.output = AppDelegate.presenter
+//        AppDelegate.presenter.interactor = interactor
+//        
+//        AppDelegate.presenter.updateView()
+        
+        return true
+    }
+    
+    private func startNSLogger()
+    {
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true);
+        let file = "\(paths.first!)/loggerdata"
+        var identifier = NSBundle.mainBundle().objectForInfoDictionaryKey(kCFBundleNameKey as String) as! String
+        let deviceUUID = UIDevice.currentDevice().identifierForVendor.UUIDString
+        identifier += "-\(deviceUUID)"
+        
+        let logger = LoggerInit()
+        LoggerSetBufferFile(logger, file)
+        LoggerSetOptions(logger, UInt32(kLoggerOption_BrowseBonjour | kLoggerOption_BrowseOnlyLocalDomain))
+        LoggerSetupBonjour(logger, nil, identifier)
+        LoggerStart(nil)
+        println("Start NSLogger with identifier: \(identifier)")
+    }
+    
+    func application(
+        application: UIApplication,
+        openURL url: NSURL,
+        sourceApplication: String?,
+        annotation: AnyObject?
+        ) -> Bool
+    {
+        if (url.host == "oauth-callback") {
+            if (url.path!.hasPrefix("/animee")) {
+                AnilistAPIService.sharedInstance.handleAuthorizingWithOpenURL(url)
+            }
+        }
         return true
     }
 

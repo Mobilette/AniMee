@@ -22,10 +22,35 @@ class AnimeListWeekPresenter:
 
     func updateView()
     {
-    	
+    	self.interactor?.findAnimeEpisodes()
     }
     
     // MARK: - AnimeListWeek interactor output interface
+    
+    func didFindAnimeEpisodes(animeListWeekItems: [AnimeListWeekItem])
+    {
+        let animeListWeekViewItems = self.animeListWeekViewItemsWithAnimeListWeekItems(animeListWeekItems)
+    }
+
+    func didFailToFindAnimeEpisodes(error: NSError)
+    {
+        
+    }
 
     // MARK: - Converting entities
+    
+    private func animeListWeekViewItemsWithAnimeListWeekItems(
+        animeListWeekItems: [AnimeListWeekItem]
+    ) -> [AnimeListWeekViewItem]
+    {
+        var animeListWeekViewItems: [AnimeListWeekViewItem] = []
+        for animeListWeekItem in animeListWeekItems {
+            let animeListWeekViewItem = AnimeListWeekViewItem()
+            animeListWeekViewItem.identifier = animeListWeekItem.identifier
+            animeListWeekViewItem.imageURLString = animeListWeekItem.imageURLString
+            animeListWeekViewItem.releaseDate = animeListWeekItem.releaseDate
+            animeListWeekViewItems.append(animeListWeekViewItem)
+        }
+        return []
+    }
 }

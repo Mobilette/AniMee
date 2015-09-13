@@ -6,12 +6,15 @@
 //  Copyright (c) 2015 Mobilette. All rights reserved.
 //
 
+import Foundation
+
 protocol AnimeListWeekInteractorInput: class
 {
-
+    func findAnimeEpisodes()
 }
 
 protocol AnimeListWeekInteractorOutput: class
 {
-
+    func didFindAnimeEpisodes(animeListWeekItems: [AnimeListWeekItem])
+    func didFailToFindAnimeEpisodes(error: NSError)
 }
