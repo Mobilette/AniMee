@@ -14,6 +14,7 @@
 		3591490B1BA5B3C200DEC373 /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3591490A1BA5B3C200DEC373 /* RootWireframe.swift */; };
 		694D2E3F1BA57476007388C2 /* AnilistAuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D2E3E1BA57476007388C2 /* AnilistAuthRouter.swift */; };
 		694D2E411BA579AE007388C2 /* AnilistAuthCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D2E401BA579AE007388C2 /* AnilistAuthCredential.swift */; };
+		694D2E441BA5D6CF007388C2 /* Categorise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D2E431BA5D6CF007388C2 /* Categorise.swift */; };
 		69A6670D1BA42DA500289546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A6670C1BA42DA500289546 /* AppDelegate.swift */; };
 		69A667121BA42DA500289546 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69A667101BA42DA500289546 /* Main.storyboard */; };
 		69A667141BA42DA500289546 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69A667131BA42DA500289546 /* Images.xcassets */; };
@@ -61,6 +62,7 @@
 		3591490A1BA5B3C200DEC373 /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootWireframe.swift; sourceTree = "<group>"; };
 		694D2E3E1BA57476007388C2 /* AnilistAuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnilistAuthRouter.swift; sourceTree = "<group>"; };
 		694D2E401BA579AE007388C2 /* AnilistAuthCredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnilistAuthCredential.swift; sourceTree = "<group>"; };
+		694D2E431BA5D6CF007388C2 /* Categorise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categorise.swift; sourceTree = "<group>"; };
 		69A667071BA42DA500289546 /* AniMee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AniMee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69A6670B1BA42DA500289546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69A6670C1BA42DA500289546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,14 @@
 				3591490A1BA5B3C200DEC373 /* RootWireframe.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		694D2E421BA5D6B3007388C2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				694D2E431BA5D6CF007388C2 /* Categorise.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		69A666FE1BA42DA500289546 = {
@@ -210,6 +220,7 @@
 		69A6672E1BA42DE200289546 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				694D2E421BA5D6B3007388C2 /* Extensions */,
 				69FD7D231BA4D5970095DDDB /* Domain */,
 				69FD7D081BA478E10095DDDB /* API */,
 			);
@@ -523,6 +534,7 @@
 				69A6674E1BA42EE100289546 /* AnimeListWeekPresenter.swift in Sources */,
 				359149051BA4BAD500DEC373 /* AnimeListWeekEpisodeCell.swift in Sources */,
 				694D2E3F1BA57476007388C2 /* AnilistAuthRouter.swift in Sources */,
+				694D2E441BA5D6CF007388C2 /* Categorise.swift in Sources */,
 				69A6674B1BA42EE100289546 /* AnimeListWeekInteractorIO.swift in Sources */,
 				69FD7D2A1BA4DD6C0095DDDB /* APIDateISO8601Transform.swift in Sources */,
 				69A6674D1BA42EE100289546 /* AnimeListWeekNetworkController.swift in Sources */,

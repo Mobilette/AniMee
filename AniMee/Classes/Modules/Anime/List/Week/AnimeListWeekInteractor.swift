@@ -70,7 +70,7 @@ class AnimeListWeekInteractor:
     
     private func dateWithoutTime(date: NSDate) -> NSDate?
     {
-        let formatter  = NSDateFormatter()
+        let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         let formattedDateString = formatter.stringFromDate(date)
         return formatter.dateFromString(formattedDateString)
@@ -100,12 +100,14 @@ class AnimeListWeekInteractor:
     {
         var animeListWeekItems: [AnimeListWeekItem] = []
         for episode in episodes {
-            let animeListWeekItem = AnimeListWeekItem()
-            animeListWeekItem.identifier = episode.identifier
-            animeListWeekItem.title = episode.title ?? ""
-            animeListWeekItem.imageURLString = episode.imageURLString
-            animeListWeekItem.releaseDate = episode.releaseDate
-            animeListWeekItems.append(animeListWeekItem)
+            if let releaseDate = episode.releaseDate {
+                let animeListWeekItem = AnimeListWeekItem()
+                animeListWeekItem.identifier = episode.identifier
+                animeListWeekItem.title = episode.title ?? ""
+                animeListWeekItem.imageURLString = episode.imageURLString
+                animeListWeekItem.releaseDate = releaseDate
+                animeListWeekItems.append(animeListWeekItem)
+            }
         }
         return animeListWeekItems
     }
