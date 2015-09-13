@@ -30,13 +30,12 @@ class AnimeListWeekInteractor:
         else {
             self.networkController?.fetchAnimeEpisodes()
                 .then { [unowned self] animeEpisodeJSONItems -> Void in
-                    MBLog.data(MBLog.Level.High, object: "non-filtered episodes[\(animeEpisodeJSONItems.count)]: \(animeEpisodeJSONItems)")
                     let filteredEpisodeJSONItems = self.filterEpisodeByReleaseDate(animeEpisodeJSONItems)
-                    MBLog.data(MBLog.Level.High, object: "filtered episodes[\(filteredEpisodeJSONItems.count)]: \(filteredEpisodeJSONItems)")
                     let episodes = self.episodesWithAnimeEpisodeJSONItems(filteredEpisodeJSONItems)
                     self.episodeRepository.removeAllEpisodes()
                     self.episodeRepository.addEpisodes(episodes)
                     let animeListWeekListItems = self.animeListWeekListItemsWithEpisodes(self.episodeRepository.episodes)
+                    MBLog.data(MBLog.Level.High, object: "Did fetch anime episodes [\(animeListWeekListItems.count)]: \(animeListWeekListItems)")
                     self.output?.didFindAnimeEpisodes(animeListWeekListItems)
             }
                 .catch { [unowned self] error -> Void in
