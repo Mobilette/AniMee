@@ -78,9 +78,7 @@ class AnimeListWeekViewController:
             let episode = dailyEpisode.episodes[indexPath.row - 1]
             let animeListWeekEpisodeCell = cell as! AnimeListWeekEpisodeCell
             animeListWeekEpisodeCell.title = episode.title
-            if let url = episode.imageURL {
-                animeListWeekEpisodeCell.imageURL = url
-            }
+            animeListWeekEpisodeCell.imageURL = episode.imageURL
         default:
             break
         }
