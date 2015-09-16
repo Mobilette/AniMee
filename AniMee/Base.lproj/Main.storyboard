@@ -5,14 +5,14 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Anime List Week View Controller-->
+        <!--AniMee-->
         <scene sceneID="wxr-AV-7ja">
             <objects>
                 <collectionViewController id="gaE-Wz-N4k" customClass="AnimeListWeekViewController" customModule="AniMee" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="C8k-pH-vEV">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.9622001262626263" green="0.9622001262626263" blue="0.9622001262626263" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="d6J-fD-TFR">
                             <size key="itemSize" width="94" height="109"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -30,7 +30,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82a-yz-2hP">
                                             <rect key="frame" x="8" y="0.0" width="584" height="50"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.13383838383838387" green="0.13383838383838387" blue="0.13383838383838387" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -89,7 +89,7 @@
                             <outlet property="delegate" destination="gaE-Wz-N4k" id="etA-XF-lZX"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="DY2-8h-UK6"/>
+                    <navigationItem key="navigationItem" title="AniMee" id="DY2-8h-UK6"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4T8-jj-guI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,9 +100,13 @@
             <objects>
                 <navigationController storyboardIdentifier="AnimeListWeekViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZoS-BU-rk9" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7mD-o9-CF0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="7mD-o9-CF0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1215686351" green="0.69803923369999998" blue="0.98039221759999995" alpha="1" colorSpace="deviceRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
