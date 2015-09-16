@@ -51,7 +51,8 @@ class AnimeListWeekViewController:
     {
         let dailyEpisode = self.dailyEpisodes[section]
         if dailyEpisode.episodes.count == 1 {
-            dailyEpisode.episodes.append("")
+            let emptyAnimeListWeekEpisodeViewItem = AnimeListWeekEpisodeViewItem()
+            dailyEpisode.episodes.append(emptyAnimeListWeekEpisodeViewItem)
         }
         return dailyEpisode.episodes.count + 1
     }
@@ -67,17 +68,18 @@ class AnimeListWeekViewController:
         
         let cell: UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier, forIndexPath: indexPath) as! UICollectionViewCell
 
+        let dailyEpisode = self.dailyEpisodes[indexPath.section]
         switch cellIdentifier {
         case animeListWeekHeaderCellIdentifier:
-            let title = self.dailyEpisode(forIndexPath: indexPath)
+            let title = dailyEpisode.title
             let animeListWeekHeaderCell = cell as! AnimeListWeekHeaderCell
             animeListWeekHeaderCell.title = title ?? ""
         case animeListWeekEpisodeCellIdentifier:
-            if let episodeImageURLString = self.dailyEpisode(forIndexPath: indexPath) {
-                let animeListWeekEpisodeCell = cell as! AnimeListWeekEpisodeCell
-                if let url = NSURL(string: episodeImageURLString) {
-                    animeListWeekEpisodeCell.imageURL = url
-                }
+            let episode = dailyEpisode.episodes[indexPath.row - 1]
+            let animeListWeekEpisodeCell = cell as! AnimeListWeekEpisodeCell
+            animeListWeekEpisodeCell.title = episode.title
+            if let url = episode.imageURL {
+                animeListWeekEpisodeCell.imageURL = url
             }
         default:
             break
@@ -141,25 +143,6 @@ class AnimeListWeekViewController:
             return false
         }
         return false
-    }
-    
-    private func dailyEpisode(
-        forIndexPath indexPath: NSIndexPath
-        ) -> String?
-    {
-        var numberOfItems = 0
-        let dailyEpisode = self.dailyEpisodes[indexPath.section]
-        numberOfItems += 1
-        if numberOfItems == indexPath.row + 1 {
-            return dailyEpisode.title
-        }
-        let numberOfDailyEpisode = dailyEpisode.episodes.count
-        numberOfItems += numberOfDailyEpisode
-        if numberOfItems >= indexPath.row + 1 {
-            let index = indexPath.row - (numberOfItems - numberOfDailyEpisode)
-            return dailyEpisode.episodes[index]
-        }
-        return nil
     }
 }
 

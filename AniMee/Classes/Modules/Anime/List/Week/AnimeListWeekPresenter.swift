@@ -84,15 +84,18 @@ class AnimeListWeekPresenter:
     
     private func episodeURLImagesWithAnimeListWeekItems(
         animeListWeekItems: [AnimeListWeekItem]
-    ) -> [String]
+    ) -> [AnimeListWeekEpisodeViewItem]
     {
-        var episodeURLImages: [String] = []
+        var animeListWeekEpisodeViewItems: [AnimeListWeekEpisodeViewItem] = []
         for animeListWeekItem in animeListWeekItems {
             if let episodeURLImage = animeListWeekItem.imageURLString {
-                episodeURLImages.append(episodeURLImage)
+                let animeListWeekEpisodeViewItem = AnimeListWeekEpisodeViewItem()
+                animeListWeekEpisodeViewItem.title = animeListWeekItem.title
+                animeListWeekEpisodeViewItem.imageURL = NSURL(string: episodeURLImage)
+                animeListWeekEpisodeViewItems.append(animeListWeekEpisodeViewItem)
             }
         }
-        return episodeURLImages
+        return animeListWeekEpisodeViewItems
     }
 
 }

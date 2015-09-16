@@ -80,6 +80,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="animeImageView" destination="m4I-mB-ShO" id="hm7-tt-e59"/>
+                                    <outlet property="animeTitle" destination="0H2-sH-4NU" id="nYx-A5-JdA"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

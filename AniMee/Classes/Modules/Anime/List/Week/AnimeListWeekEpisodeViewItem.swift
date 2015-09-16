@@ -1,14 +1,14 @@
 //
-//  AnimeListWeekViewItem.swift
+//  AnimeListWeekEpisodeViewItem.swift
 //  AniMee
 //
-//  Created by Issouf M'sa Benaly on 9/12/15.
+//  Created by Romain ASNAR on 9/16/15.
 //  Copyright (c) 2015 Mobilette. All rights reserved.
 //
 
 import Foundation
 
-class AnimeListWeekViewItem:
+class AnimeListWeekEpisodeViewItem:
     Equatable,
     Printable
 {
@@ -16,7 +16,7 @@ class AnimeListWeekViewItem:
 
     var identifier: String? = nil
     var title: String = ""
-    var episodes: [AnimeListWeekEpisodeViewItem] = []
+    var imageURL: NSURL? = nil
 
     // MARK: - Life cycle
 
@@ -25,16 +25,16 @@ class AnimeListWeekViewItem:
     // MARK: - Printable protocol
     
     var description: String {
-        return "{ AnimeListWeekViewItem" + "\n"
+        return "{ AnimeListWeekEpisodeViewItem" + "\n"
             + "identifier: \(self.identifier)" + "\n"
             + "title: \(self.title)" + "\n"
-            + "episodes: \(self.episodes)" + "\n"
+            + "imageURL: \(self.imageURL)" + "\n"
             + "}" + "\n"
     }
 }
 
 // MARK: - Equatable protocol
 
-func ==(lhs: AnimeListWeekViewItem, rhs: AnimeListWeekViewItem) -> Bool {
+func ==(lhs: AnimeListWeekEpisodeViewItem, rhs: AnimeListWeekEpisodeViewItem) -> Bool {
     return lhs.identifier == rhs.identifier
 }
