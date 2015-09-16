@@ -12,6 +12,7 @@
 		359149081BA4C48300DEC373 /* AnimeListWeekViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359149071BA4C48300DEC373 /* AnimeListWeekViewItem.swift */; };
 		3591490B1BA5B3C200DEC373 /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3591490A1BA5B3C200DEC373 /* RootWireframe.swift */; };
 		691795331BA9606D00AAF3FB /* AnimeListWeekEpisodeViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691795321BA9606D00AAF3FB /* AnimeListWeekEpisodeViewItem.swift */; };
+		691795361BA9AFA100AAF3FB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 691795351BA9AFA100AAF3FB /* Settings.bundle */; };
 		694D2E3F1BA57476007388C2 /* AnilistAuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D2E3E1BA57476007388C2 /* AnilistAuthRouter.swift */; };
 		694D2E411BA579AE007388C2 /* AnilistAuthCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D2E401BA579AE007388C2 /* AnilistAuthCredential.swift */; };
 		694D2E441BA5D6CF007388C2 /* Categorise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D2E431BA5D6CF007388C2 /* Categorise.swift */; };
@@ -62,6 +63,7 @@
 		359149071BA4C48300DEC373 /* AnimeListWeekViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekViewItem.swift; sourceTree = "<group>"; };
 		3591490A1BA5B3C200DEC373 /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootWireframe.swift; sourceTree = "<group>"; };
 		691795321BA9606D00AAF3FB /* AnimeListWeekEpisodeViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekEpisodeViewItem.swift; sourceTree = "<group>"; };
+		691795351BA9AFA100AAF3FB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		694D2E3E1BA57476007388C2 /* AnilistAuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnilistAuthRouter.swift; sourceTree = "<group>"; };
 		694D2E401BA579AE007388C2 /* AnilistAuthCredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnilistAuthCredential.swift; sourceTree = "<group>"; };
 		694D2E431BA5D6CF007388C2 /* Categorise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categorise.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		69A6670A1BA42DA500289546 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				691795351BA9AFA100AAF3FB /* Settings.bundle */,
 				69A6670B1BA42DA500289546 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -396,6 +399,7 @@
 				69A667051BA42DA500289546 /* Resources */,
 				0CAB4BA1031FD6815BFD9F69 /* Embed Pods Frameworks */,
 				AA77782612A8BAC41BD55B0E /* Copy Pods Resources */,
+				691795341BA9AF2200AAF3FB /* Add Git commit hash to build version */,
 			);
 			buildRules = (
 			);
@@ -466,6 +470,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				691795361BA9AFA100AAF3FB /* Settings.bundle in Resources */,
 				69A667121BA42DA500289546 /* Main.storyboard in Resources */,
 				69A667171BA42DA500289546 /* LaunchScreen.xib in Resources */,
 				69A667141BA42DA500289546 /* Images.xcassets in Resources */,
@@ -496,6 +501,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		691795341BA9AF2200AAF3FB /* Add Git commit hash to build version */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Add Git commit hash to build version";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git=`sh /etc/profile; which git`\nappBuild=`\"$git\" rev-list --branches develop | wc -l`\nif [ $CONFIGURATION = \"Debug\" ]; then\nbranchName=`\"$git\" rev-parse --abbrev-ref HEAD`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild-$branchName\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\nelse\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $appBuild\" \"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"\nfi\necho \"Updated ${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\"";
 		};
 		AA77782612A8BAC41BD55B0E /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -694,6 +713,7 @@
 			baseConfigurationReference = 148DC8F13349F78BF0248601 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AniMee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -705,6 +725,7 @@
 			baseConfigurationReference = CEA306702F055D2D3B9DA292 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AniMee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ) -> Bool
     {
         self.startNSLogger()
+        self.setVersionNumberToSettings()
         if let window = self.window {
             let rootWireframe = RootWireframe()
             rootWireframe.presentRootViewController(fromWindow: window)
@@ -42,6 +43,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         LoggerSetupBonjour(logger, nil, identifier)
         LoggerStart(nil)
         println("Start NSLogger with identifier: \(identifier)")
+    }
+    
+    private func setVersionNumberToSettings()
+    {
+        NSUserDefaults.standardUserDefaults().setObject(self.versionNumber(), forKey: "version_preference")
+    }
+    
+    private func versionNumber() -> String?
+    {
+        if let informationDictionnary = NSBundle.mainBundle().infoDictionary {
+            if let majorVersion = informationDictionnary["CFBundleShortVersionString"] as? String,
+                let minorVersion = informationDictionnary["CFBundleVersion"] as? String
+            {
+                return "\(majorVersion) (\(minorVersion))"
+            }
+        }
+        return nil
     }
 
     func applicationWillResignActive(application: UIApplication) {
