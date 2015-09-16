@@ -12,6 +12,12 @@ class AnimeListWeekEpisodeCell: UICollectionViewCell
 {
     // MARK: - Property
     
+    var title: String = "" {
+        didSet {
+            self.animeTitle.text = title
+        }
+    }
+    
     var imageURL: NSURL? = nil {
         didSet {
             if self.animeImageView.layer.cornerRadius <= 0 {
@@ -28,5 +34,6 @@ class AnimeListWeekEpisodeCell: UICollectionViewCell
     
     // MARK: - Outlet
     
+    @IBOutlet private weak var animeTitle: UILabel!
     @IBOutlet private weak var animeImageView: UIImageView!
 }

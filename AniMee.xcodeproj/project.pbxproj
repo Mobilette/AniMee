@@ -11,6 +11,7 @@
 		359149051BA4BAD500DEC373 /* AnimeListWeekEpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359149041BA4BAD500DEC373 /* AnimeListWeekEpisodeCell.swift */; };
 		359149081BA4C48300DEC373 /* AnimeListWeekViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359149071BA4C48300DEC373 /* AnimeListWeekViewItem.swift */; };
 		3591490B1BA5B3C200DEC373 /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3591490A1BA5B3C200DEC373 /* RootWireframe.swift */; };
+		691795331BA9606D00AAF3FB /* AnimeListWeekEpisodeViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691795321BA9606D00AAF3FB /* AnimeListWeekEpisodeViewItem.swift */; };
 		694D2E3F1BA57476007388C2 /* AnilistAuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D2E3E1BA57476007388C2 /* AnilistAuthRouter.swift */; };
 		694D2E411BA579AE007388C2 /* AnilistAuthCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D2E401BA579AE007388C2 /* AnilistAuthCredential.swift */; };
 		694D2E441BA5D6CF007388C2 /* Categorise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D2E431BA5D6CF007388C2 /* Categorise.swift */; };
@@ -60,6 +61,7 @@
 		359149041BA4BAD500DEC373 /* AnimeListWeekEpisodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekEpisodeCell.swift; sourceTree = "<group>"; };
 		359149071BA4C48300DEC373 /* AnimeListWeekViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekViewItem.swift; sourceTree = "<group>"; };
 		3591490A1BA5B3C200DEC373 /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootWireframe.swift; sourceTree = "<group>"; };
+		691795321BA9606D00AAF3FB /* AnimeListWeekEpisodeViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekEpisodeViewItem.swift; sourceTree = "<group>"; };
 		694D2E3E1BA57476007388C2 /* AnilistAuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnilistAuthRouter.swift; sourceTree = "<group>"; };
 		694D2E401BA579AE007388C2 /* AnilistAuthCredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnilistAuthCredential.swift; sourceTree = "<group>"; };
 		694D2E431BA5D6CF007388C2 /* Categorise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categorise.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				359149071BA4C48300DEC373 /* AnimeListWeekViewItem.swift */,
+				691795321BA9606D00AAF3FB /* AnimeListWeekEpisodeViewItem.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				69FD7D221BA4D4990095DDDB /* AnimeListWeekItem.swift in Sources */,
 				694D2E411BA579AE007388C2 /* AnilistAuthCredential.swift in Sources */,
 				69FD7D101BA47AC00095DDDB /* AnilistAuthAPIService.swift in Sources */,
+				691795331BA9606D00AAF3FB /* AnimeListWeekEpisodeViewItem.swift in Sources */,
 				694D2E491BA5E67F007388C2 /* ImageRouter.swift in Sources */,
 				69A6674C1BA42EE100289546 /* AnimeListWeekModuleInterface.swift in Sources */,
 				69A667511BA42EE100289546 /* AnimeListWeekWireframe.swift in Sources */,
