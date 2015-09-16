@@ -30,7 +30,8 @@ class AnimeListWeekPresenter:
     func didFindAnimeEpisodes(animeListWeekItems: [AnimeListWeekItem])
     {
         let categorisedEpisodes = self.categorisedEpisodes(animeListWeekItems)
-        let animeListWeekViewItems = self.animeListWeekViewItemsWithCategorisedEpisodes(categorisedEpisodes)
+        let sortedEpisodes = self.sortEpisodesByDate(categorisedEpisodes)
+        let animeListWeekViewItems = self.animeListWeekViewItemsWithCategorisedEpisodes(sortedEpisodes)
         self.view?.setWeeklyEpisodeList(animeListWeekViewItems)
     }
 
@@ -38,8 +39,8 @@ class AnimeListWeekPresenter:
     {
         
     }
-
-    // MARK: - Converting entities
+    
+    // MARK: - Sorting
     
     private func categorisedEpisodes(
         episodes: [AnimeListWeekItem]
@@ -53,18 +54,43 @@ class AnimeListWeekPresenter:
         return categorisedEpisodes
     }
     
-    private func animeListWeekViewItemsWithCategorisedEpisodes(
+    private func sortEpisodesByDate(
         categorisedEpisodes: [String: [AnimeListWeekItem]]
+    ) -> [[String: [AnimeListWeekItem]]]
+    {
+        var dates: [String] = categorisedEpisodes.keys.array
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        dates.sort({
+            let date1 = formatter.dateFromString($0) ?? NSDate()
+            let date2 = formatter.dateFromString($1) ?? NSDate()
+            return date1.compare(date2) == NSComparisonResult.OrderedAscending
+        })
+        var episodes: [[String: [AnimeListWeekItem]]] = []
+        for date in dates {
+            if let categorisedEpisode = categorisedEpisodes[date] {
+                episodes.append([date: categorisedEpisode])
+            }
+        }
+        return episodes
+    }
+
+    // MARK: - Converting entities
+    
+    private func animeListWeekViewItemsWithCategorisedEpisodes(
+        sortedEpisodes: [[String: [AnimeListWeekItem]]]
     ) -> [AnimeListWeekViewItem]
     {
         var animeListWeekViewItems: [AnimeListWeekViewItem] = []
-        for categorisedEpisode in categorisedEpisodes {
-            let animeListWeekViewItem = AnimeListWeekViewItem()
-            animeListWeekViewItem.identifier = NSUUID().UUIDString
-            animeListWeekViewItem.title = self.formattedDayStringWithDateString(categorisedEpisode.0)
-            let episodeURLImages = self.episodeURLImagesWithAnimeListWeekItems(categorisedEpisode.1)
-            animeListWeekViewItem.episodes = episodeURLImages
-            animeListWeekViewItems.append(animeListWeekViewItem)
+        for sortedEpisode in sortedEpisodes {
+            for episode in sortedEpisode {
+                let animeListWeekViewItem = AnimeListWeekViewItem()
+                animeListWeekViewItem.identifier = NSUUID().UUIDString
+                animeListWeekViewItem.title = self.formattedDayStringWithDateString(episode.0)
+                let episodeURLImages = self.episodeURLImagesWithAnimeListWeekItems(episode.1)
+                animeListWeekViewItem.episodes = episodeURLImages
+                animeListWeekViewItems.append(animeListWeekViewItem)
+            }
         }
         return animeListWeekViewItems
     }
