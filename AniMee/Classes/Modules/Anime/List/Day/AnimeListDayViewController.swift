@@ -32,4 +32,11 @@ class AnimeListDayViewController:
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Anime list day view interface
+    
+    func setDailyEpisodeList(animeListDayViewItems: [AnimeListDayViewItem])
+    {
+        
+    }
 }

@@ -16,6 +16,7 @@
 		35558A6A1BA9D3640056D1B4 /* AnimeListDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35558A611BA9D3640056D1B4 /* AnimeListDayViewController.swift */; };
 		35558A6B1BA9D3640056D1B4 /* AnimeListDayViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35558A621BA9D3640056D1B4 /* AnimeListDayViewInterface.swift */; };
 		35558A6C1BA9D3640056D1B4 /* AnimeListDayWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35558A631BA9D3640056D1B4 /* AnimeListDayWireframe.swift */; };
+		35558A6F1BA9D6160056D1B4 /* AnimeListDayViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35558A6E1BA9D6160056D1B4 /* AnimeListDayViewItem.swift */; };
 		359149031BA4BA6400DEC373 /* AnimeListWeekHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359149021BA4BA6400DEC373 /* AnimeListWeekHeaderCell.swift */; };
 		359149051BA4BAD500DEC373 /* AnimeListWeekEpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359149041BA4BAD500DEC373 /* AnimeListWeekEpisodeCell.swift */; };
 		359149081BA4C48300DEC373 /* AnimeListWeekViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359149071BA4C48300DEC373 /* AnimeListWeekViewItem.swift */; };
@@ -76,6 +77,7 @@
 		35558A611BA9D3640056D1B4 /* AnimeListDayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListDayViewController.swift; sourceTree = "<group>"; };
 		35558A621BA9D3640056D1B4 /* AnimeListDayViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListDayViewInterface.swift; sourceTree = "<group>"; };
 		35558A631BA9D3640056D1B4 /* AnimeListDayWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListDayWireframe.swift; sourceTree = "<group>"; };
+		35558A6E1BA9D6160056D1B4 /* AnimeListDayViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListDayViewItem.swift; sourceTree = "<group>"; };
 		359149021BA4BA6400DEC373 /* AnimeListWeekHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekHeaderCell.swift; sourceTree = "<group>"; };
 		359149041BA4BAD500DEC373 /* AnimeListWeekEpisodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekEpisodeCell.swift; sourceTree = "<group>"; };
 		359149071BA4C48300DEC373 /* AnimeListWeekViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekViewItem.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		35558A5A1BA9D3140056D1B4 /* Day */ = {
 			isa = PBXGroup;
 			children = (
+				35558A6D1BA9D5B80056D1B4 /* Entity */,
 				35558A5B1BA9D3640056D1B4 /* AnimeListDayInteractor.swift */,
 				35558A5C1BA9D3640056D1B4 /* AnimeListDayInteractorIO.swift */,
 				35558A5D1BA9D3640056D1B4 /* AnimeListDayModuleInterface.swift */,
@@ -153,6 +156,14 @@
 				35558A631BA9D3640056D1B4 /* AnimeListDayWireframe.swift */,
 			);
 			path = Day;
+			sourceTree = "<group>";
+		};
+		35558A6D1BA9D5B80056D1B4 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				35558A6E1BA9D6160056D1B4 /* AnimeListDayViewItem.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		359148FD1BA4960D00DEC373 /* Cell */ = {
@@ -608,6 +619,7 @@
 				35558A691BA9D3640056D1B4 /* AnimeListDayPresenter.swift in Sources */,
 				69FD7D2A1BA4DD6C0095DDDB /* APIDateISO8601Transform.swift in Sources */,
 				69A6674D1BA42EE100289546 /* AnimeListWeekNetworkController.swift in Sources */,
+				35558A6F1BA9D6160056D1B4 /* AnimeListDayViewItem.swift in Sources */,
 				69FD7D221BA4D4990095DDDB /* AnimeListWeekItem.swift in Sources */,
 				694D2E411BA579AE007388C2 /* AnilistAuthCredential.swift in Sources */,
 				69FD7D101BA47AC00095DDDB /* AnilistAuthAPIService.swift in Sources */,
