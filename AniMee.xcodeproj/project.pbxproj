@@ -14,6 +14,7 @@
 		69D508BB1BA8673700677D3C /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D508BA1BA8673700677D3C /* RootWireframe.swift */; };
 		69D508CC1BA86CFD00677D3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69D508CA1BA86CFD00677D3C /* Main.storyboard */; };
 		69D508D11BA86D6B00677D3C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69D508CF1BA86D6B00677D3C /* LaunchScreen.xib */; };
+		A3C3AAB8F705D8DC0DE073D1 /* Pods_AniMee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4047B5D008C1D5BCBC7428D9 /* Pods_AniMee.framework */; };
 		A57EA98A618BA8AA0E6807CB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B90A448DE9B3D5C1B5E4CC /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		163D61B2C942956D23AA1567 /* Pods-AniMee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AniMee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AniMee/Pods-AniMee.debug.xcconfig"; sourceTree = "<group>"; };
+		4047B5D008C1D5BCBC7428D9 /* Pods_AniMee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AniMee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B90A448DE9B3D5C1B5E4CC /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		566E8C53D1B8647270A43707 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		69D5088A1BA8638000677D3C /* AniMee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AniMee.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +45,7 @@
 		69D508CB1BA86CFD00677D3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = AniMee/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		69D508D01BA86D6B00677D3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = AniMee/Base.lproj/LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
 		932D6B899F805DB37AD7132B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E145C7DD3E7C417F50E6074F /* Pods-AniMee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AniMee.release.xcconfig"; path = "Pods/Target Support Files/Pods-AniMee/Pods-AniMee.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A57EA98A618BA8AA0E6807CB /* Pods.framework in Frameworks */,
+				A3C3AAB8F705D8DC0DE073D1 /* Pods_AniMee.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +73,8 @@
 			children = (
 				566E8C53D1B8647270A43707 /* Pods.debug.xcconfig */,
 				932D6B899F805DB37AD7132B /* Pods.release.xcconfig */,
+				163D61B2C942956D23AA1567 /* Pods-AniMee.debug.xcconfig */,
+				E145C7DD3E7C417F50E6074F /* Pods-AniMee.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -207,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				45B90A448DE9B3D5C1B5E4CC /* Pods.framework */,
+				4047B5D008C1D5BCBC7428D9 /* Pods_AniMee.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -337,7 +345,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AniMee/Pods-AniMee-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EB3D9BEE86C5DB8443A9A843 /* Embed Pods Frameworks */ = {
@@ -352,7 +360,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AniMee/Pods-AniMee-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -491,7 +499,7 @@
 		};
 		69D508AA1BA8638100677D3C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 566E8C53D1B8647270A43707 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 163D61B2C942956D23AA1567 /* Pods-AniMee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AniMee/Info.plist;
@@ -502,7 +510,7 @@
 		};
 		69D508AB1BA8638100677D3C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 932D6B899F805DB37AD7132B /* Pods.release.xcconfig */;
+			baseConfigurationReference = E145C7DD3E7C417F50E6074F /* Pods-AniMee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AniMee/Info.plist;

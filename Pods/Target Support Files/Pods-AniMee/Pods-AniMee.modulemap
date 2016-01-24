@@ -1,0 +1,6 @@
+framework module Pods_AniMee {
+  umbrella header "Pods-AniMee-umbrella.h"
+
+  export *
+  module * { export * }
+}

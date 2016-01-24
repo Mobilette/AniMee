@@ -3,11 +3,13 @@ source 'https://github.com/Mobilette/Specs.git'
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'Alamofire'
-pod 'ObjectMapper'
+target "AniMee" do
+	pod 'Alamofire'
+	pod 'ObjectMapper'
 
-pod 'PromiseKit'
+	pod 'PromiseKit'
 
-pod 'NSLogger'
-pod 'MBLogger'
-pod 'MobiletteFoundation'
+	pod 'NSLogger'
+	pod 'MBLogger'
+	pod 'MobiletteFoundation'
+end
