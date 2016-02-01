@@ -15,7 +15,6 @@
 		69D508CC1BA86CFD00677D3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69D508CA1BA86CFD00677D3C /* Main.storyboard */; };
 		69D508D11BA86D6B00677D3C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69D508CF1BA86D6B00677D3C /* LaunchScreen.xib */; };
 		A3C3AAB8F705D8DC0DE073D1 /* Pods_AniMee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4047B5D008C1D5BCBC7428D9 /* Pods_AniMee.framework */; };
-		A57EA98A618BA8AA0E6807CB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B90A448DE9B3D5C1B5E4CC /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +52,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A57EA98A618BA8AA0E6807CB /* Pods.framework in Frameworks */,
 				A3C3AAB8F705D8DC0DE073D1 /* Pods_AniMee.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
