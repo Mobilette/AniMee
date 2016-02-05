@@ -27,7 +27,6 @@
 		35CA02821C61005700043AC1 /* AnilistAnimeAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA02801C61005700043AC1 /* AnilistAnimeAPIService.swift */; };
 		35CA02831C61005700043AC1 /* AnimeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA02811C61005700043AC1 /* AnimeRouter.swift */; };
 		35CA02871C61010000043AC1 /* AnilistAuthAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA02841C61010000043AC1 /* AnilistAuthAPIService.swift */; };
-		35CA02881C61010000043AC1 /* AnilistAuthCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA02851C61010000043AC1 /* AnilistAuthCredential.swift */; };
 		35CA02891C61010000043AC1 /* AnilistAuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA02861C61010000043AC1 /* AnilistAuthRouter.swift */; };
 		35CA028C1C6102B000043AC1 /* AnilistAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA028A1C6102B000043AC1 /* AnilistAPIService.swift */; };
 		35CA028D1C6102B000043AC1 /* AnimeAPIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA028B1C6102B000043AC1 /* AnimeAPIServiceProtocol.swift */; };
@@ -77,7 +76,6 @@
 		35CA02801C61005700043AC1 /* AnilistAnimeAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnilistAnimeAPIService.swift; path = "../../../../../../../../Downloads/AniMee-develop/AniMee/Classes/Commons/API/Anilist/Anime/AnilistAnimeAPIService.swift"; sourceTree = "<group>"; };
 		35CA02811C61005700043AC1 /* AnimeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimeRouter.swift; path = "../../../../../../../../Downloads/AniMee-develop/AniMee/Classes/Commons/API/Anilist/Anime/AnimeRouter.swift"; sourceTree = "<group>"; };
 		35CA02841C61010000043AC1 /* AnilistAuthAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnilistAuthAPIService.swift; path = "../../../../../../../../Downloads/AniMee-develop/AniMee/Classes/Commons/API/Anilist/Auth/AnilistAuthAPIService.swift"; sourceTree = "<group>"; };
-		35CA02851C61010000043AC1 /* AnilistAuthCredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnilistAuthCredential.swift; path = "../../../../../../../../Downloads/AniMee-develop/AniMee/Classes/Commons/API/Anilist/Auth/AnilistAuthCredential.swift"; sourceTree = "<group>"; };
 		35CA02861C61010000043AC1 /* AnilistAuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnilistAuthRouter.swift; path = "../../../../../../../../Downloads/AniMee-develop/AniMee/Classes/Commons/API/Anilist/Auth/AnilistAuthRouter.swift"; sourceTree = "<group>"; };
 		35CA028A1C6102B000043AC1 /* AnilistAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnilistAPIService.swift; path = "../../../../../../../../Downloads/AniMee-develop/AniMee/Classes/Commons/API/Anilist/AnilistAPIService.swift"; sourceTree = "<group>"; };
 		35CA028B1C6102B000043AC1 /* AnimeAPIServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimeAPIServiceProtocol.swift; path = "../../../../../../../../Downloads/AniMee-develop/AniMee/Classes/Commons/API/Anilist/AnimeAPIServiceProtocol.swift"; sourceTree = "<group>"; };
@@ -244,7 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				35CA02841C61010000043AC1 /* AnilistAuthAPIService.swift */,
-				35CA02851C61010000043AC1 /* AnilistAuthCredential.swift */,
 				35CA02861C61010000043AC1 /* AnilistAuthRouter.swift */,
 			);
 			name = Auth;
@@ -583,7 +580,6 @@
 				69D508B61BA8648800677D3C /* APIDateISO8601Transform.swift in Sources */,
 				35CA028D1C6102B000043AC1 /* AnimeAPIServiceProtocol.swift in Sources */,
 				35CA02721C60FCB000043AC1 /* AnimeListWeekEpisodeViewItem.swift in Sources */,
-				35CA02881C61010000043AC1 /* AnilistAuthCredential.swift in Sources */,
 				35CA027B1C60FF1B00043AC1 /* ImageAPIService.swift in Sources */,
 				35CA02911C6102ED00043AC1 /* RouterProtocol.swift in Sources */,
 				69D508901BA8638000677D3C /* AppDelegate.swift in Sources */,
