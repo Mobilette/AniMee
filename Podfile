@@ -7,6 +7,8 @@ target "AniMee" do
 	pod 'Alamofire'
 	pod 'ObjectMapper'
 
+    pod 'p2.OAuth2'
+    
 	pod 'PromiseKit'
 
 	pod 'NSLogger'

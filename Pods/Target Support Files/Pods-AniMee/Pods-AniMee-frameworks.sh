@@ -91,6 +91,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-AniMee/OMGHTTPURLRQ.framework"
   install_framework "Pods-AniMee/ObjectMapper.framework"
   install_framework "Pods-AniMee/PromiseKit.framework"
+  install_framework "Pods-AniMee/SwiftKeychain.framework"
+  install_framework "Pods-AniMee/p2_OAuth2.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-AniMee/Alamofire.framework"
@@ -100,4 +102,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-AniMee/OMGHTTPURLRQ.framework"
   install_framework "Pods-AniMee/ObjectMapper.framework"
   install_framework "Pods-AniMee/PromiseKit.framework"
+  install_framework "Pods-AniMee/SwiftKeychain.framework"
+  install_framework "Pods-AniMee/p2_OAuth2.framework"
 fi
