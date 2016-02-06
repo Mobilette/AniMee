@@ -9,14 +9,39 @@
 import Foundation
 import PromiseKit
 import ObjectMapper
+import MBLogger
 
-class AnimeListWeekNetworkController
+class AnimeListWeekNetworkController: AnimeListWeekNetworkProtocol
 {
     // MARK: - Property
     
     // MARK: - Life cycle
 
     // MARK: - Network
+    
+    func fetchAnimeEpisodes() -> Promise<[AnimeListWeekJSONItem]>
+    {
+        return Promise<[AnimeListWeekJSONItem]> { fullfil, reject in
+            AnilistAPIService.sharedInstance.fetchAnimeEpisodes()
+            .then { JSONString -> Void in
+                let JSONItem = Mapper<AnimeListWeekJSONItem>().mapArray(JSONString)
+                if JSONItem?.count > 0 {
+                    MBLog.data(MBLog.Level.High, object: "Did map fetch anime episodes JSON response: \(JSONItem).")
+                    if let JSONItem = JSONItem {
+                        fullfil(JSONItem)
+                    }
+                }
+                else {
+                    let mappingError = AnimeListWeekNetworkControllerError.Mapping(JSONString).error
+                    MBLog.error(MBLog.Level.High, object: mappingError)
+                    reject(mappingError)
+                }
+            }
+            .error { error -> Void in
+                reject(error)
+            }
+        }
+    }
     
     // MARK: - Error
     
