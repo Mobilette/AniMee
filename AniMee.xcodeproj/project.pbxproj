@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3570E4601C67838F00019C4C /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3570E45F1C67838F00019C4C /* RouterProtocol.swift */; };
 		35CA025E1C60ED3200043AC1 /* AnimeListWeekInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA025A1C60ED3200043AC1 /* AnimeListWeekInteractor.swift */; };
 		35CA025F1C60ED3200043AC1 /* AnimeListWeekInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA025B1C60ED3200043AC1 /* AnimeListWeekInteractorIO.swift */; };
 		35CA02601C60ED3200043AC1 /* AnimeListWeekNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA025C1C60ED3200043AC1 /* AnimeListWeekNetworkController.swift */; };
@@ -30,7 +31,6 @@
 		35CA02891C61010000043AC1 /* AnilistAuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA02861C61010000043AC1 /* AnilistAuthRouter.swift */; };
 		35CA028C1C6102B000043AC1 /* AnilistAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA028A1C6102B000043AC1 /* AnilistAPIService.swift */; };
 		35CA028D1C6102B000043AC1 /* AnimeAPIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA028B1C6102B000043AC1 /* AnimeAPIServiceProtocol.swift */; };
-		35CA02911C6102ED00043AC1 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA028F1C6102ED00043AC1 /* RouterProtocol.swift */; };
 		35CA02941C62026100043AC1 /* Categorise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA02931C62026100043AC1 /* Categorise.swift */; };
 		35CA02981C62030700043AC1 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA02961C62030700043AC1 /* Episode.swift */; };
 		35CA02991C62030700043AC1 /* EpisodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA02971C62030700043AC1 /* EpisodeRepository.swift */; };
@@ -56,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		163D61B2C942956D23AA1567 /* Pods-AniMee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AniMee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AniMee/Pods-AniMee.debug.xcconfig"; sourceTree = "<group>"; };
+		3570E45F1C67838F00019C4C /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		35CA025A1C60ED3200043AC1 /* AnimeListWeekInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekInteractor.swift; sourceTree = "<group>"; };
 		35CA025B1C60ED3200043AC1 /* AnimeListWeekInteractorIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekInteractorIO.swift; sourceTree = "<group>"; };
 		35CA025C1C60ED3200043AC1 /* AnimeListWeekNetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekNetworkController.swift; sourceTree = "<group>"; };
@@ -79,7 +80,6 @@
 		35CA02861C61010000043AC1 /* AnilistAuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnilistAuthRouter.swift; path = Auth/AnilistAuthRouter.swift; sourceTree = "<group>"; };
 		35CA028A1C6102B000043AC1 /* AnilistAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnilistAPIService.swift; sourceTree = "<group>"; };
 		35CA028B1C6102B000043AC1 /* AnimeAPIServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeAPIServiceProtocol.swift; sourceTree = "<group>"; };
-		35CA028F1C6102ED00043AC1 /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterProtocol.swift; path = "../../../../../../../Downloads/AniMee-develop/AniMee/Classes/Commons/API/RouterProtocol.swift"; sourceTree = "<group>"; };
 		35CA02931C62026100043AC1 /* Categorise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Categorise.swift; path = "../../../../../../../Downloads/AniMee-develop/AniMee/Classes/Commons/Extensions/Categorise.swift"; sourceTree = "<group>"; };
 		35CA02961C62030700043AC1 /* Episode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		35CA02971C62030700043AC1 /* EpisodeRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeRepository.swift; sourceTree = "<group>"; };
@@ -359,7 +359,7 @@
 		69D508B31BA8645300677D3C /* API */ = {
 			isa = PBXGroup;
 			children = (
-				35CA028F1C6102ED00043AC1 /* RouterProtocol.swift */,
+				3570E45F1C67838F00019C4C /* RouterProtocol.swift */,
 				35CA027D1C60FF4800043AC1 /* Anilist */,
 				35CA02781C60FEDD00043AC1 /* Image */,
 				69D508B81BA8649400677D3C /* Components */,
@@ -573,6 +573,7 @@
 				35CA02771C60FCDC00043AC1 /* AnimeListWeekJSONItem.swift in Sources */,
 				35CA026E1C60FC6000043AC1 /* AnimeListWeekEpisodeCell.swift in Sources */,
 				35CA025E1C60ED3200043AC1 /* AnimeListWeekInteractor.swift in Sources */,
+				3570E4601C67838F00019C4C /* RouterProtocol.swift in Sources */,
 				35CA02761C60FCDC00043AC1 /* AnimeListWeekItem.swift in Sources */,
 				35CA026A1C60F15B00043AC1 /* AnimeListWeekViewInterface.swift in Sources */,
 				35CA028C1C6102B000043AC1 /* AnilistAPIService.swift in Sources */,
@@ -581,7 +582,6 @@
 				35CA028D1C6102B000043AC1 /* AnimeAPIServiceProtocol.swift in Sources */,
 				35CA02721C60FCB000043AC1 /* AnimeListWeekEpisodeViewItem.swift in Sources */,
 				35CA027B1C60FF1B00043AC1 /* ImageAPIService.swift in Sources */,
-				35CA02911C6102ED00043AC1 /* RouterProtocol.swift in Sources */,
 				69D508901BA8638000677D3C /* AppDelegate.swift in Sources */,
 				35CA026B1C60F15B00043AC1 /* AnimeListWeekWireframe.swift in Sources */,
 				35CA026F1C60FC6000043AC1 /* AnimeListWeekHeaderCell.swift in Sources */,
