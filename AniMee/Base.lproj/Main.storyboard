@@ -121,7 +121,7 @@
         <!--AniMeeDayEpisode-->
         <scene sceneID="jXL-Lf-GK3">
             <objects>
-                <collectionViewController id="kzP-Hl-fcu" userLabel="AniMeeDayEpisode" customClass="TestViewController" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="kzP-Hl-fcu" userLabel="AniMeeDayEpisode" customClass="AnimeListDayViewController" customModule="AniMee" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="9fP-cZ-XfJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,7 +133,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="UPY-Lk-EU3" customClass="CellTest" customModule="Test" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="UPY-Lk-EU3" customClass="AnimeListDayCell" customModule="AniMee" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -239,12 +239,17 @@
                                     <mask key="constraints">
                                         <exclude reference="9tP-nP-D4a"/>
                                         <exclude reference="ZR1-MV-YlG"/>
-                                        <exclude reference="SkN-MV-0A3"/>
                                         <exclude reference="5W3-jV-jxz"/>
+                                        <exclude reference="SkN-MV-0A3"/>
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outlet property="animeTitle" destination="kPs-Wb-nbq" id="bQ9-wr-jEX"/>
+                                    <outlet property="animeImageView" destination="tlW-PY-xgM" id="g1Z-as-WCy"/>
+                                    <outlet property="animeSeason" destination="kOm-hh-NKQ" id="6mf-HN-EQN"/>
+                                    <outlet property="animeTitle" destination="6k0-rv-Jdo" id="MEd-PW-MWc"/>
+                                    <outlet property="episodeNumber" destination="K9X-Xg-1uS" id="jhz-5o-9Fn"/>
+                                    <outlet property="episodeTitle" destination="TXc-oc-WH5" id="AdA-xx-7pr"/>
+                                    <outlet property="releaseHour" destination="kPs-Wb-nbq" id="k0N-dx-d6h"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
