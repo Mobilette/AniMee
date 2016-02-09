@@ -10,27 +10,39 @@ import UIKit
 
 class RootWireframe
 {
+    let RootViewController: String = "RootViewController"
     
     // MARK: - Presentation
     
     func presentRootViewController(fromWindow window: UIWindow)
     {
-        // self.present<# Root module name #>ViewController(fromWindow: window)
+        self.presentAnimeListWeekViewController(fromWindow: window)
     }
     
-    /*
-    private func present<# Root module name #>ViewController(fromWindow window: UIWindow)
+    private func presentAnimeListWeekViewController(fromWindow window: UIWindow)
     {
-        let presenter = <# Root module name #>Presenter()
-        let interactor = <# Root module name #>Interactor()
-        // let networkController = <# Root module name #>NetworkController()
-        let wireframe = <# Root module name #>Wireframe()
-        // interactor.networkController = networkController
+        let presenter = AnimeListWeekPresenter()
+        let interactor = AnimeListWeekInteractor()
+        let networkController = AnimeListWeekNetworkController()
+        let wireframe = AnimeListWeekWireframe()
+        interactor.networkController = networkController
         interactor.output = presenter
         presenter.interactor = interactor
         presenter.wireframe = wireframe
         wireframe.presenter = presenter
         wireframe.presentInterface(fromWindow: window)
     }
-    */
+    
+    private func mainStoryboard() -> UIStoryboard
+    {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle:NSBundle.mainBundle())
+        return storyboard
+    }
+    
+    private func viewControllerFromStoryboard() -> UIViewController
+    {
+        let storyboard = self.mainStoryboard()
+        let viewController = storyboard.instantiateViewControllerWithIdentifier(RootViewController)
+        return viewController
+    }
 }
