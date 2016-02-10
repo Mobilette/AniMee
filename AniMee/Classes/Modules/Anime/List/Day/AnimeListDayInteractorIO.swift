@@ -8,12 +8,16 @@
 //  Copyright © 2016 Mobilette. All rights reserved.
 //
 
+import Foundation
+
 protocol AnimeListDayInteractorInput: class
 {
-
+    func findListOfAnimeEpisodeForASepecificDay(date: NSDate)
 }
 
 protocol AnimeListDayInteractorOutput: class
 {
-
+    // Review for the object
+    func didFindListOfAnimeEpisodeForASepecificDay(episodesOfDay: [AnimeListDayItem])
+    func didFailToFindListOfAnimeEpisodeForASepecificDay(error: ErrorType)
 }

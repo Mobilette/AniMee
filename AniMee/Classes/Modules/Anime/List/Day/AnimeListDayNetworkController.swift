@@ -9,8 +9,8 @@
 //
 
 import Foundation
-// import PromiseKit
-// import ObjectMapper
+import PromiseKit
+import ObjectMapper
 
 class AnimeListDayNetworkController: AnimeListDayNetworkProtocol
 {
@@ -19,6 +19,13 @@ class AnimeListDayNetworkController: AnimeListDayNetworkProtocol
     // MARK: - Life cycle
 
     // MARK: - Network
+    
+    func fetchAnimeEpisodesOfSpecificDay(date: NSDate) -> Promise<[AnimeListDayJSONItem]>
+    {
+        return Promise<[AnimeListDayJSONItem]> { fullfil, reject in
+            // Get anime list episode for specific day
+        }
+    }
     
     // MARK: - Error
     

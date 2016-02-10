@@ -29,5 +29,15 @@ class AnimeListDayPresenter:
     
     // MARK: - AnimeListDay interactor output interface
 
+    func didFindListOfAnimeEpisodeForASepecificDay(episodesOfDay: [AnimeListDayItem])
+    {
+        
+    }
+    
+    func didFailToFindListOfAnimeEpisodeForASepecificDay(error: ErrorType)
+    {
+        
+    }
+    
     // MARK: - Converting entities
 }

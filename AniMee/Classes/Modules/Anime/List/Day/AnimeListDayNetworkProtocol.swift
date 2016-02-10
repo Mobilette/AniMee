@@ -9,7 +9,9 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol AnimeListDayNetworkProtocol: class
 {
+    func fetchAnimeEpisodesOfSpecificDay(date: NSDate) -> Promise<[AnimeListDayJSONItem]>
 }
