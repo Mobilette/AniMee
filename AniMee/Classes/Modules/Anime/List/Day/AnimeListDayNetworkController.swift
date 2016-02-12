@@ -23,6 +23,7 @@ class AnimeListDayNetworkController: AnimeListDayNetworkProtocol
     func fetchAnimeEpisodesOfSpecificDay(date: NSDate) -> Promise<[AnimeListDayJSONItem]>
     {
         return Promise<[AnimeListDayJSONItem]> { fullfil, reject in
+            // Implement router
             // Get anime list episode for specific day
         }
     }
