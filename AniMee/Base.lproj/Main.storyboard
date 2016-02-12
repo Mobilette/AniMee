@@ -121,7 +121,7 @@
         <!--AniMeeDayEpisode-->
         <scene sceneID="axn-h8-twl">
             <objects>
-                <collectionViewController id="UOk-dA-098" userLabel="AniMeeDayEpisode" customClass="TestViewController" customModule="Test" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="UOk-dA-098" userLabel="AniMeeDayEpisode" customClass="AnimeListEpisodeViewController" customModule="AniMee" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Jsz-tF-InF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,7 +133,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="EJZ-59-GIO" customClass="CellTest" customModule="Test" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="EJZ-59-GIO" customClass="AnimeListEpisodeCell" customModule="AniMee" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -232,6 +232,13 @@
                                         <exclude reference="MGh-Al-6Ca"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="animeImageView" destination="A21-x5-cyB" id="4mq-OW-h7c"/>
+                                    <outlet property="animeName" destination="wop-kt-4v7" id="hkE-do-UDn"/>
+                                    <outlet property="animeSeason" destination="sc8-mg-ue6" id="Ud0-bN-r5f"/>
+                                    <outlet property="episodeNumber" destination="v6J-fW-hXf" id="Dpd-dm-RPY"/>
+                                    <outlet property="episodeTitle" destination="eFK-kw-apv" id="53s-hM-APR"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
