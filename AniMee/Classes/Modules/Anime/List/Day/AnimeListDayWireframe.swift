@@ -37,7 +37,7 @@ class AnimeListDayWireframe//: StoryboardSegueDelegate
         let viewController = segue.destinationViewController as! AnimeListDayViewController
         viewController.presenter = self.presenter
         self.viewController = viewController
-        //self.presenter?.view = viewController
+        self.presenter?.view = viewController
     }
 
     /*

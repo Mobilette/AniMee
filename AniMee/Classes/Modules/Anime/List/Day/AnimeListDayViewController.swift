@@ -13,7 +13,8 @@ import UIKit
 
 class AnimeListDayViewController:
     UICollectionViewController,
-    UICollectionViewDelegateFlowLayout
+    UICollectionViewDelegateFlowLayout,
+    AnimeListDayViewInterface
 {
 	// MARK: - Property
 
