@@ -29,6 +29,8 @@ class AnimeListEpisodeViewController:
         self.presenter?.updateView()
     }
 
+    // MARK : - Collection view data source
+    
     override func numberOfSectionsInCollectionView(
         collectionView: UICollectionView
         ) -> Int
@@ -46,6 +48,8 @@ class AnimeListEpisodeViewController:
         //cell.title = labels[indexPath.row]
         return cell
     }
+    
+    // MARK: - Collection view delegate flow layout
     
     func collectionView(
         collectionView: UICollectionView,
