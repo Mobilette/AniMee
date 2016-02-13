@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="-219" y="357"/>
         </scene>
-        <!--AniMeeDayEpisode-->
+        <!--AniMeeListEpisode-->
         <scene sceneID="axn-h8-twl">
             <objects>
-                <collectionViewController id="UOk-dA-098" userLabel="AniMeeDayEpisode" customClass="AnimeListEpisodeViewController" customModule="AniMee" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="UOk-dA-098" userLabel="AniMeeListEpisode" customClass="AnimeListEpisodeViewController" customModule="AniMee" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Jsz-tF-InF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,7 +147,7 @@
                                                 <constraint firstAttribute="width" constant="85" id="scp-nC-TXz"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One piece" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wop-kt-4v7">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anime name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wop-kt-4v7">
                                             <rect key="frame" x="205" y="12" width="387" height="16"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="387" id="BJE-Gt-ZH3"/>
@@ -165,7 +165,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saison 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sc8-mg-ue6">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anime season" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sc8-mg-ue6">
                                             <rect key="frame" x="205" y="32" width="387" height="16"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="16" id="QYf-Bb-DbQ"/>
@@ -178,12 +178,12 @@
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="y6J-Xg-Tem"/>
                                                     <exclude reference="iv2-hQ-emx"/>
+                                                    <exclude reference="y6J-Xg-Tem"/>
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode 216/320" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6J-fW-hXf">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6J-fW-hXf">
                                             <rect key="frame" x="205" y="52" width="387" height="16"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="387" id="o3c-Ae-mpC"/>
@@ -193,7 +193,7 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blood" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFK-kw-apv">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFK-kw-apv">
                                             <rect key="frame" x="205" y="72" width="387" height="16"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="387" id="Xtr-aP-Lg6"/>
@@ -226,8 +226,8 @@
                                 <size key="customSize" width="600" height="100"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="qoW-Sf-qbH"/>
                                         <exclude reference="ZYB-Bk-y0o"/>
+                                        <exclude reference="qoW-Sf-qbH"/>
                                         <exclude reference="6h5-Wf-I91"/>
                                         <exclude reference="MGh-Al-6Ca"/>
                                     </mask>
