@@ -9,4 +9,5 @@
 protocol AnimeListWeekModuleInterface: class
 {
 	func updateView()
+    func showAnimeListDayInterface()
 }

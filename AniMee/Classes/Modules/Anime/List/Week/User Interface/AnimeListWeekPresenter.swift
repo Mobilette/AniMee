@@ -40,6 +40,11 @@ class AnimeListWeekPresenter:
         
     }
     
+    func showAnimeListDayInterface()
+    {
+        self.wireframe?.prepareAnimeListDayInterface()
+    }
+    
     // MARK: - Sorting
     
     private func categorisedEpisodes(
