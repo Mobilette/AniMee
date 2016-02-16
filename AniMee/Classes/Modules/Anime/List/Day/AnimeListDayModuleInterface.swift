@@ -11,4 +11,5 @@
 protocol AnimeListDayModuleInterface: class
 {
 	func updateView()
+    func showAnimeListEpisodeInterface(animeName: String)
 }

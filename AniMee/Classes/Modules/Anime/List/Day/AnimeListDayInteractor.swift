@@ -30,7 +30,7 @@ class AnimeListDayInteractor:
         self.output?.didFindListOfAnimeEpisodeForASepecificDay(item)
         }
         .error { [unowned self] error -> Void in
-            MBLog.app(MBLog.Level.High, object: "Did fail to <# failure action #>.")
+            MBLog.app(MBLog.Level.High, object: "Did fail to find anime episode for a specific day.")
             self.output?.didFailToFindListOfAnimeEpisodeForASepecificDay(error)
         }
     }
@@ -39,6 +39,11 @@ class AnimeListDayInteractor:
     
     private func animeEpisodesItem(animeListDayJSONItem: [AnimeListDayJSONItem]) -> [AnimeListDayItem]
     {
-        return [AnimeListDayItem()]
+        var dayEpisodeItems: [AnimeListDayItem] = []
+        for item in animeListDayJSONItem {
+            let dayEpisodeItem = AnimeListDayItem(animeListDayJSONItem: item)
+            dayEpisodeItems.append(dayEpisodeItem)
+        }
+        return dayEpisodeItems
     }
 }

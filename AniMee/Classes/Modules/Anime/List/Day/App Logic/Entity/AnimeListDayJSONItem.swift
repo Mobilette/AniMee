@@ -53,6 +53,24 @@ class AnimeListDayJSONItem:
     }
 }
 
+extension AnimeListDayItem
+{
+    convenience init(animeListDayJSONItem: AnimeListDayJSONItem)
+    {
+        self.init()
+        self.identifier = "\(animeListDayJSONItem.identifier)"
+        if let title = animeListDayJSONItem.title {
+            self.title = title
+        }
+        if let imageUrl = animeListDayJSONItem.imageURLString {
+            self.imageURLString = imageUrl
+        }
+        if let date = animeListDayJSONItem.releaseDate {
+            self.releaseDate = date
+        }
+    }
+}
+
 // MARK: - Equatable protocol
 
 func ==(lhs: AnimeListDayJSONItem, rhs: AnimeListDayJSONItem) -> Bool {

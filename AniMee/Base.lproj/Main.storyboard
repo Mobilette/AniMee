@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jRu-A5-c2S">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -249,6 +250,7 @@
                                     <outlet property="episodeNumber" destination="K9X-Xg-1uS" id="jhz-5o-9Fn"/>
                                     <outlet property="episodeTitle" destination="TXc-oc-WH5" id="AdA-xx-7pr"/>
                                     <outlet property="releaseHour" destination="kPs-Wb-nbq" id="k0N-dx-d6h"/>
+                                    <segue destination="6UB-fD-UGK" kind="show" identifier="pushAnimeListDayToAnimeListEpisode" id="LhX-ov-iEX"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
