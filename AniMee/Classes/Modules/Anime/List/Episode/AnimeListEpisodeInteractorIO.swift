@@ -8,12 +8,15 @@
 //  Copyright © 2016 Mobilette. All rights reserved.
 //
 
+import Foundation
+
 protocol AnimeListEpisodeInteractorInput: class
 {
-
+    func findAnimeListEpisodes()
 }
 
 protocol AnimeListEpisodeInteractorOutput: class
 {
-
+    func didFindAnimeListEpisodes(animeEpisodeItems: [AnimeListEpisodeItem])
+    func didFailToFindAnimeListEpisodes(error: ErrorType)
 }

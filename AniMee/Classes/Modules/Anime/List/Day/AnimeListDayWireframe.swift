@@ -10,6 +10,7 @@
 
 import Foundation
 import UIKit
+import MBLogger
 
 let AnimeListDayViewControllerIdentifier: String = "AnimeListDayViewController"
 
@@ -72,25 +73,23 @@ class AnimeListDayWireframe//: StoryboardSegueDelegate
 
     // MARK: - Prepare interface
 
-    /*
-    func prepare<# Interface name #>Interface()
+    func prepareAnimeListEpisodeInterface(animeName: String)
     {
-        var presenter = <# Interface name #>Presenter()
-        var interactor = <# Interface name #>Interactor()
-        var wireframe = <# Interface name #>Wireframe()
+        let presenter = AnimeListEpisodePresenter()
+        let interactor = AnimeListEpisodeInteractor(name: animeName)
+        let wireframe = AnimeListEpisodeWireframe()
         interactor.output = presenter
         presenter.interactor = interactor
         presenter.wireframe = wireframe
         wireframe.presenter = presenter
         if let segue = self.preparedSegue {
-            MBLog.view(MBLog.Level.High, object: "Did prepare <# Interface name #> interface.")
+            MBLog.view(MBLog.Level.High, object: "Did prepare anime list episodes interface.")
             wireframe.prepareInterface(fromSegue: segue)
         }
         else {
-            MBLog.error(MBLog.Level.High, object: "Did fail to prepare <# Interface name #> interface.")
+            MBLog.error(MBLog.Level.High, object: "Did fail to prepare anime list episodes interface.")
         }
     }
-    */
     
     // MARK: - Storyboard
     

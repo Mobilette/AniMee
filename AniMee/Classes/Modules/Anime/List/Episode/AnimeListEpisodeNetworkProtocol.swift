@@ -9,7 +9,9 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol AnimeListEpisodeNetworkProtocol: class
 {
+    func fetchAnimeListEpisodes(animeName: String) -> Promise<[AnimeListEpisodeJSONItem]>
 }

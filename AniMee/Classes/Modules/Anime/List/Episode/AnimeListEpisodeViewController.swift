@@ -19,7 +19,7 @@ class AnimeListEpisodeViewController:
 	// MARK: - Property
 
     var presenter: AnimeListEpisodeModuleInterface? = nil
-    let labels: [String] = ["12:45", "12:45", "12:45"] // Temporary data
+    private var animeEpisodes: [AnimeListEpisodeViewItem] = []
     
 	// MARK: - Life cycle
 
@@ -40,12 +40,12 @@ class AnimeListEpisodeViewController:
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return labels.count
+        return self.animeEpisodes.count
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: AnimeListEpisodeCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! AnimeListEpisodeCell
-        //cell.title = labels[indexPath.row]
+        //let episodes = self.animeEpisodes[indexPath.row]
         return cell
     }
     
@@ -64,5 +64,13 @@ class AnimeListEpisodeViewController:
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - View interface
+    
+    func setAnimeEpisodesViewList(animeListEpisodeViewItems: [AnimeListEpisodeViewItem])
+    {
+        self.animeEpisodes = animeListEpisodeViewItems
+        self.collectionView?.reloadData()
     }
 }

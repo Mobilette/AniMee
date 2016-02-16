@@ -9,8 +9,8 @@
 //
 
 import Foundation
-// import PromiseKit
-// import ObjectMapper
+import PromiseKit
+import ObjectMapper
 
 class AnimeListEpisodeNetworkController: AnimeListEpisodeNetworkProtocol
 {
@@ -19,6 +19,13 @@ class AnimeListEpisodeNetworkController: AnimeListEpisodeNetworkProtocol
     // MARK: - Life cycle
 
     // MARK: - Network
+    
+    func fetchAnimeListEpisodes(animeName: String) -> Promise<[AnimeListEpisodeJSONItem]>
+    {
+        return Promise<[AnimeListEpisodeJSONItem]> { fullfil, reject in
+            
+        }
+    }
     
     // MARK: - Error
     
