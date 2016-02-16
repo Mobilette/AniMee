@@ -51,7 +51,7 @@ class AnimeListWeekWireframe: StoryboardSegueDelegate
 
     // MARK: - Prepare interface
 
-    func prepareAnimeListDayInterface()
+    func prepareAnimeListDayInterface(date: NSDate)
     {
         let presenter = AnimeListDayPresenter()
         let interactor = AnimeListDayInteractor()

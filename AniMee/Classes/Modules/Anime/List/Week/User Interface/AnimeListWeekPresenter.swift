@@ -40,9 +40,9 @@ class AnimeListWeekPresenter:
         
     }
     
-    func showAnimeListDayInterface()
+    func showAnimeListDayInterface(date: NSDate)
     {
-        self.wireframe?.prepareAnimeListDayInterface()
+        self.wireframe?.prepareAnimeListDayInterface(date)
     }
     
     // MARK: - Sorting
@@ -123,6 +123,7 @@ class AnimeListWeekPresenter:
                 let animeListWeekEpisodeViewItem = AnimeListWeekEpisodeViewItem()
                 animeListWeekEpisodeViewItem.title = animeListWeekItem.title
                 animeListWeekEpisodeViewItem.imageURL = NSURL(string: episodeURLImage)
+                animeListWeekEpisodeViewItem.releaseDate = animeListWeekItem.releaseDate
                 animeListWeekEpisodeViewItems.append(animeListWeekEpisodeViewItem)
             }
         }
