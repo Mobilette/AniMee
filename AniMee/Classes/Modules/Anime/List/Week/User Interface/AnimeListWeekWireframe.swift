@@ -45,25 +45,23 @@ class AnimeListWeekWireframe//: StoryboardSegueDelegate
 
     // MARK: - Prepare interface
 
-    /*
-    func prepare<# Interface name #>Interface()
+    func prepareAnimeListDayInterface(date: NSDate)
     {
-        var presenter = <# Interface name #>Presenter()
-        var interactor = <# Interface name #>Interactor()
-        var wireframe = <# Interface name #>Wireframe()
+        let presenter = AnimeListDayPresenter()
+        let interactor = AnimeListDayInteractor(date: date)
+        let wireframe = AnimeListDayWireframe()
         interactor.output = presenter
         presenter.interactor = interactor
         presenter.wireframe = wireframe
         wireframe.presenter = presenter
         if let segue = self.preparedSegue {
-            MBLog.view(MBLog.Level.High, object: "Did prepare <# Interface name #> interface.")
+            //MBLog.view(MBLog.Level.High, object: "Did prepare anime list day interface.")
             wireframe.prepareInterface(fromSegue: segue)
         }
         else {
-            MBLog.error(MBLog.Level.High, object: "Did fail to prepare <# Interface name #> interface.")
+            //MBLog.error(MBLog.Level.High, object: "Did fail to prepare anime list day interface.")
         }
     }
-    */
     
     // MARK: - Storyboard
     

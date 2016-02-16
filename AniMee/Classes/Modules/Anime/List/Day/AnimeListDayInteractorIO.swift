@@ -12,7 +12,7 @@ import Foundation
 
 protocol AnimeListDayInteractorInput: class
 {
-    func findListOfAnimeEpisodeForASepecificDay(date: NSDate)
+    func findListOfAnimeEpisodeForASepecificDay()
 }
 
 protocol AnimeListDayInteractorOutput: class
