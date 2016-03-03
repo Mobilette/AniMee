@@ -18,12 +18,18 @@ class AnimeListDayInteractor:
     
     weak var output: AnimeListDayInteractorOutput? = nil
     var networkController: AnimeListDayNetworkProtocol? = nil
-
+    private var episodeDate: NSDate = NSDate()
+    
+    init(date: NSDate)
+    {
+        self.episodeDate = date
+    }
+    
     // MARK: - AnimeListDay interactor input interface
 
-    func findListOfAnimeEpisodeForASepecificDay(date: NSDate)
+    func findListOfAnimeEpisodeForASepecificDay()
     {
-        self.networkController?.fetchAnimeEpisodesOfSpecificDay(date)
+        self.networkController?.fetchAnimeEpisodesOfSpecificDay(self.episodeDate)
         .then { [unowned self] JSONItem -> Void in
         let item = self.animeEpisodesItem(JSONItem)
         MBLog.app(MBLog.Level.High, object: "Did find anime episode for a specific day: \(item).")
