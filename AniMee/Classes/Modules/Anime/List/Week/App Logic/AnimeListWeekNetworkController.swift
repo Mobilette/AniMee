@@ -22,7 +22,7 @@ class AnimeListWeekNetworkController: AnimeListWeekNetworkProtocol
     func fetchAnimeEpisodes() -> Promise<[AnimeListWeekJSONItem]>
     {
         return Promise<[AnimeListWeekJSONItem]> { fullfil, reject in
-            AnilistAPIService.sharedInstance.fetchAnimeEpisodes()
+            AnilistAPIService.fetchAnimeEpisodes()
             .then { JSONString -> Void in
                 let JSONItem = Mapper<AnimeListWeekJSONItem>().mapArray(JSONString)
                 if JSONItem?.count > 0 {
