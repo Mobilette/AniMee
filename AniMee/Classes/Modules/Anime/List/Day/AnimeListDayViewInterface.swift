@@ -10,5 +10,5 @@
 
 protocol AnimeListDayViewInterface: class
 {
-
+    func setAnimeListDayEpisode(animeListDayEpisodeViewItems: [AnimeListDayEpisodeViewItem])
 }

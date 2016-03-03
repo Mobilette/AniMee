@@ -16,10 +16,16 @@ class AnimeListDayViewController:
     UICollectionViewDelegateFlowLayout,
     AnimeListDayViewInterface
 {
+    // MARK: - Type
+    
+    enum SegueIdentifier: String {
+        case PushToAnimeListEpisode = "pushAnimeListDayToAnimeListEpisode"
+    }
+    
 	// MARK: - Property
 
     var presenter: AnimeListDayModuleInterface? = nil
-    let labels: [String] = ["12:45", "12:45", "12:45"] // This variable has to be deleted
+    private var dailyEpisodes: [AnimeListDayEpisodeViewItem] = []
     
 	// MARK: - Life cycle
 
@@ -29,6 +35,11 @@ class AnimeListDayViewController:
         self.presenter?.updateView()
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        //self.storyboardSegueDelegate.prepareForSegue(segue, sender: sender)
+    }
+    
     // MARK: - Colletion view data source
     
     override func numberOfSectionsInCollectionView(
@@ -40,19 +51,28 @@ class AnimeListDayViewController:
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return labels.count
+        return self.dailyEpisodes.count
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: AnimeListDayCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! AnimeListDayCell
-        cell.hour = labels[indexPath.row]
-//        cell.imageURL = NSURL()
-//        cell.name = labels[indexPath.row]
-//        cell.season = labels[indexPath.row]
-//        cell.number = labels[indexPath.row]
-//        cell.title = labels[indexPath.row]
+        let episode = self.dailyEpisodes[indexPath.row]
+        cell.imageURL = episode.imageURL
+        cell.name = episode.animeName
+        cell.hour = episode.hour
+        //        cell.number = labels[indexPath.row]
+        //        cell.title = labels[indexPath.row]
+        //        cell.season = labels[indexPath.row]
         
         return cell
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        // To do: implement AnimeListDayViewItem
+        
+        let episode = self.dailyEpisodes[indexPath.row]
+        self.presenter?.showAnimeListEpisodeInterface(episode.animeName)
     }
     
     // MARK: - Collection view delegate flow layout
@@ -70,5 +90,13 @@ class AnimeListDayViewController:
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - View interface
+    
+    func setAnimeListDayEpisode(animeListDayEpisodeViewItems: [AnimeListDayEpisodeViewItem])
+    {
+        self.dailyEpisodes = animeListDayEpisodeViewItems
+        self.collectionView?.reloadData()
     }
 }
