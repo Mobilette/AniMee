@@ -82,6 +82,7 @@
                                 <connections>
                                     <outlet property="animeImageView" destination="5zq-xD-ZCE" id="hor-mp-dRV"/>
                                     <outlet property="animeTitle" destination="PVo-lM-pQc" id="aSV-Iv-mES"/>
+                                    <segue destination="kzP-Hl-fcu" kind="show" identifier="pushAnimeListWeekToAnimeListDay" id="KJT-W4-vpe"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -134,7 +135,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="UPY-Lk-EU3" customClass="AnimeListDayCell" customModule="AniMee" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>

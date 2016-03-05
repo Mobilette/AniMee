@@ -31,6 +31,7 @@
 		3552A5C41C6B5CB100EFEA3F /* AnimeListDayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3552A5C31C6B5CB100EFEA3F /* AnimeListDayItem.swift */; };
 		3570E4601C67838F00019C4C /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3570E45F1C67838F00019C4C /* RouterProtocol.swift */; };
 		3570E4641C6786C200019C4C /* Categorise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3570E4631C6786C200019C4C /* Categorise.swift */; };
+		35C03C821C7220CF00AD90AB /* StoryboardSegueDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C03C811C7220CF00AD90AB /* StoryboardSegueDelegate.swift */; };
 		35CA025E1C60ED3200043AC1 /* AnimeListWeekInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA025A1C60ED3200043AC1 /* AnimeListWeekInteractor.swift */; };
 		35CA025F1C60ED3200043AC1 /* AnimeListWeekInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA025B1C60ED3200043AC1 /* AnimeListWeekInteractorIO.swift */; };
 		35CA02601C60ED3200043AC1 /* AnimeListWeekNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CA025C1C60ED3200043AC1 /* AnimeListWeekNetworkController.swift */; };
@@ -103,6 +104,7 @@
 		3552A5C31C6B5CB100EFEA3F /* AnimeListDayItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListDayItem.swift; sourceTree = "<group>"; };
 		3570E45F1C67838F00019C4C /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		3570E4631C6786C200019C4C /* Categorise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categorise.swift; sourceTree = "<group>"; };
+		35C03C811C7220CF00AD90AB /* StoryboardSegueDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSegueDelegate.swift; sourceTree = "<group>"; };
 		35CA025A1C60ED3200043AC1 /* AnimeListWeekInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekInteractor.swift; sourceTree = "<group>"; };
 		35CA025B1C60ED3200043AC1 /* AnimeListWeekInteractorIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekInteractorIO.swift; sourceTree = "<group>"; };
 		35CA025C1C60ED3200043AC1 /* AnimeListWeekNetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimeListWeekNetworkController.swift; sourceTree = "<group>"; };
@@ -268,6 +270,14 @@
 				3552A5C31C6B5CB100EFEA3F /* AnimeListDayItem.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		35C03C801C72203400AD90AB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				35C03C811C7220CF00AD90AB /* StoryboardSegueDelegate.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		35CA02521C60C5B700043AC1 /* Anime */ = {
@@ -490,6 +500,7 @@
 		69D508B11BA863C000677D3C /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				35C03C801C72203400AD90AB /* Protocol */,
 				35CA02921C62020C00043AC1 /* Extensions */,
 				69D508B31BA8645300677D3C /* API */,
 				69D508B21BA8643300677D3C /* Domain */,
@@ -757,6 +768,7 @@
 				3552A5BB1C6A3D6000EFEA3F /* AnimeListDayViewInterface.swift in Sources */,
 				35CA02671C60F15B00043AC1 /* AnimeListWeekModuleInterface.swift in Sources */,
 				35CA02991C62030700043AC1 /* EpisodeRepository.swift in Sources */,
+				35C03C821C7220CF00AD90AB /* StoryboardSegueDelegate.swift in Sources */,
 				35CA02681C60F15B00043AC1 /* AnimeListWeekPresenter.swift in Sources */,
 				3522C0BA1C6DEDF600248227 /* AnimeListEpisodeViewController.swift in Sources */,
 				3522C0B81C6DEDF600248227 /* AnimeListEpisodeNetworkProtocol.swift in Sources */,
