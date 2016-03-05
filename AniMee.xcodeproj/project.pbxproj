@@ -436,6 +436,10 @@
 			isa = PBXGroup;
 			children = (
 				35CAC8521C73A86D00AA06CF /* AnimeListEpisodeViewItem.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		35CAC8491C737AF100AA06CF /* Entity */ = {
 			isa = PBXGroup;
 			children = (
