@@ -8,18 +8,28 @@
 
 import Foundation
 import UIKit
+import MBLogger
 
 class AnimeListWeekViewController:
     UICollectionViewController,
     UICollectionViewDelegateFlowLayout,
     AnimeListWeekViewInterface
 {
+    // MARK: - Type
+    
+    enum SegueIdentifier: String {
+        case PushToAnimeListDay = "pushAnimeListWeekToAnimeListDay"
+    }
+    
 	// MARK: - Property
     
     private var dailyEpisodes: [AnimeListWeekViewItem] = []
     
     var presenter: AnimeListWeekModuleInterface? = nil
     var sizeCell: CGSize = CGSizeZero
+    
+    var storyboardSegueDelegate: StoryboardSegueDelegate! = nil
+    
 	// MARK: - Life cycle
 
     override func viewDidLoad()
@@ -33,6 +43,25 @@ class AnimeListWeekViewController:
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK : - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        // To do: Doesn't work test after merge perform
+        
+        // self.storyboardSegueDelegate.prepareForSegue(segue, sender: sender)
+        //        if let identifier = segue.identifier {
+        //            switch identifier {
+        //            case SegueIdentifier.PushToAnimeListDay.rawValue:
+        //                MBLog.view(MBLog.Level.Low, object: "Did prepare selected day to be pushed to anime list day view.")
+        //                self.presenter?.showAnimeListDayInterface()
+        //                break
+        //            default:
+        //                break
+        //            }
+        //        }
     }
     
     // MARK: - Collection view data source
@@ -84,6 +113,14 @@ class AnimeListWeekViewController:
         }
         
         return cell
+    }
+    
+    // MARK: - Selected cell data source
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        let episode = self.dailyEpisodes[indexPath.section].episodes[indexPath.row - 1]
+        self.presenter?.showAnimeListDayInterface(episode.releaseDate)
     }
     
     // MARK: - Collection view delegate flow layout
@@ -143,6 +180,9 @@ class AnimeListWeekViewController:
         return false
     }
 }
+
+
+
 
 
 

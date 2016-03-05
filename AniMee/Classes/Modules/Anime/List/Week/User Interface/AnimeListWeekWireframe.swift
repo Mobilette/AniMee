@@ -8,10 +8,11 @@
 
 import Foundation
 import UIKit
+import MBLogger
 
 let AnimeListWeekViewControllerIdentifier: String = "AnimeListWeekViewController"
 
-class AnimeListWeekWireframe//: StoryboardSegueDelegate
+class AnimeListWeekWireframe: StoryboardSegueDelegate
 {
 	// MARK: - Property
 
@@ -19,15 +20,20 @@ class AnimeListWeekWireframe//: StoryboardSegueDelegate
     private weak var viewController: AnimeListWeekViewController? = nil
 
     // MARK: - Storyboard segue
-
-    /*    
+    
     enum SegueIdentifier: String {
-        case PushTo<# Next interface name #> = "pushAnimeListWeekTo<# Next interface name #>"
+        case PushToAnimeListDay = "pushAnimeListWeekToAnimeListDay"
     }
-    */
 
     private var preparedSegue: UIStoryboardSegue? = nil
 
+    // MARK: - Storyboard Segue Delegate
+    
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        self.preparedSegue = segue
+    }
+    
     // MARK: - Presentation
     
     func presentInterface(fromWindow window: UIWindow)
@@ -45,25 +51,23 @@ class AnimeListWeekWireframe//: StoryboardSegueDelegate
 
     // MARK: - Prepare interface
 
-    /*
-    func prepare<# Interface name #>Interface()
+    func prepareAnimeListDayInterface(date: NSDate)
     {
-        var presenter = <# Interface name #>Presenter()
-        var interactor = <# Interface name #>Interactor()
-        var wireframe = <# Interface name #>Wireframe()
+        let presenter = AnimeListDayPresenter()
+        let interactor = AnimeListDayInteractor(date: date)
+        let wireframe = AnimeListDayWireframe()
         interactor.output = presenter
         presenter.interactor = interactor
         presenter.wireframe = wireframe
         wireframe.presenter = presenter
         if let segue = self.preparedSegue {
-            MBLog.view(MBLog.Level.High, object: "Did prepare <# Interface name #> interface.")
+            MBLog.view(MBLog.Level.High, object: "Did prepare anime list day interface.")
             wireframe.prepareInterface(fromSegue: segue)
         }
         else {
-            MBLog.error(MBLog.Level.High, object: "Did fail to prepare <# Interface name #> interface.")
+            MBLog.error(MBLog.Level.High, object: "Did fail to prepare anime list day interface.")
         }
     }
-    */
     
     // MARK: - Storyboard
     
@@ -80,3 +84,7 @@ class AnimeListWeekWireframe//: StoryboardSegueDelegate
         return navigationController
     }
 }
+
+    
+
+

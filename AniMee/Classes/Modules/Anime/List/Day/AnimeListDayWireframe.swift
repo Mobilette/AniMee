@@ -23,14 +23,19 @@ class AnimeListDayWireframe//: StoryboardSegueDelegate
 
     // MARK: - Storyboard segue
 
-    /*    
     enum SegueIdentifier: String {
-        case PushTo<# Next interface name #> = "pushAnimeListDayTo<# Next interface name #>"
+        case PushToAnimeListEpisode = "pushAnimeListDayToAnimeListEpisode"
     }
-    */
 
     private var preparedSegue: UIStoryboardSegue? = nil
 
+    // MARK: - Storyboard Segue Delegate
+    
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        self.preparedSegue = segue
+    }
+    
     // MARK: - Presentation
 
     func prepareInterface(fromSegue segue: UIStoryboardSegue)
@@ -93,29 +98,17 @@ class AnimeListDayWireframe//: StoryboardSegueDelegate
     
     // MARK: - Storyboard
     
-    /*
     private func mainStoryboard() -> UIStoryboard
     {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle:NSBundle.mainBundle())
         return storyboard
     }
-    */
     
-    /*
-    private func viewControllerFromStoryboard() -> AnimeListDayViewController
-    {
-    let storyboard = self.mainStoryboard()
-    let viewController = storyboard.instantiateViewControllerWithIdentifier(AnimeListDayViewControllerIdentifier) as! AnimeListDayViewController
-    return viewController
-    }
-    */
-    
-    /*
     private func navigationControllerFromStoryboard() -> UINavigationController
     {
     let storyboard = self.mainStoryboard()
     let navigationController = storyboard.instantiateViewControllerWithIdentifier(AnimeListDayViewControllerIdentifier) as! UINavigationController
     return navigationController
     }
-    */
 }
+
