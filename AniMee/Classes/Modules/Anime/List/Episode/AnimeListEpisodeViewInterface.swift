@@ -10,5 +10,5 @@
 
 protocol AnimeListEpisodeViewInterface: class
 {
-
+    func setAnimeEpisodesViewList(animeListEpisodeViewItems: [AnimeListEpisodeViewItem])
 }

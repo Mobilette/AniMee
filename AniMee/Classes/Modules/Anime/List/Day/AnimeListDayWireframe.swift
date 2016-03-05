@@ -81,7 +81,7 @@ class AnimeListDayWireframe//: StoryboardSegueDelegate
     func prepareAnimeListEpisodeInterface(animeName: String)
     {
         let presenter = AnimeListEpisodePresenter()
-        let interactor = AnimeListEpisodeInteractor()
+        let interactor = AnimeListEpisodeInteractor(name: animeName)
         let wireframe = AnimeListEpisodeWireframe()
         interactor.output = presenter
         presenter.interactor = interactor

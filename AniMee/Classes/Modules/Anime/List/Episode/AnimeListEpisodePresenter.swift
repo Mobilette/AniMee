@@ -24,10 +24,31 @@ class AnimeListEpisodePresenter:
 
     func updateView()
     {
-    	
+    	self.interactor?.findAnimeListEpisodes()
     }
     
     // MARK: - AnimeListEpisode interactor output interface
 
+    func didFindAnimeListEpisodes(animeEpisodeItems: [AnimeListEpisodeItem])
+    {
+        let animeEpisodesViewItems = self.animeListEpisodeViewItem(animeEpisodeItems)
+        self.view?.setAnimeEpisodesViewList(animeEpisodesViewItems)
+    }
+    
+    func didFailToFindAnimeListEpisodes(error: ErrorType)
+    {
+        
+    }
+    
     // MARK: - Converting entities
+    
+    private func animeListEpisodeViewItem(animeEpisodeItems: [AnimeListEpisodeItem]) -> [AnimeListEpisodeViewItem]
+    {
+        var episodeViewItems: [AnimeListEpisodeViewItem] = []
+        for item in animeEpisodeItems {
+            let episodeItem = AnimeListEpisodeViewItem(animeListEpisodeItem: item)
+            episodeViewItems.append(episodeItem)
+        }
+        return episodeViewItems
+    }
 }
