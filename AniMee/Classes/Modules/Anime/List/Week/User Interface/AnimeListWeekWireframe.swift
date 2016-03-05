@@ -54,7 +54,7 @@ class AnimeListWeekWireframe: StoryboardSegueDelegate
     func prepareAnimeListDayInterface(date: NSDate)
     {
         let presenter = AnimeListDayPresenter()
-        let interactor = AnimeListDayInteractor()
+        let interactor = AnimeListDayInteractor(date: date)
         let wireframe = AnimeListDayWireframe()
         interactor.output = presenter
         presenter.interactor = interactor

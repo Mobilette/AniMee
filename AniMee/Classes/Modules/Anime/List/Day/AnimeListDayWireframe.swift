@@ -10,6 +10,7 @@
 
 import Foundation
 import UIKit
+import MBLogger
 
 let AnimeListDayViewControllerIdentifier: String = "AnimeListDayViewController"
 
@@ -22,14 +23,19 @@ class AnimeListDayWireframe//: StoryboardSegueDelegate
 
     // MARK: - Storyboard segue
 
-    /*    
     enum SegueIdentifier: String {
-        case PushTo<# Next interface name #> = "pushAnimeListDayTo<# Next interface name #>"
+        case PushToAnimeListEpisode = "pushAnimeListDayToAnimeListEpisode"
     }
-    */
 
     private var preparedSegue: UIStoryboardSegue? = nil
 
+    // MARK: - Storyboard Segue Delegate
+    
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        self.preparedSegue = segue
+    }
+    
     // MARK: - Presentation
 
     func prepareInterface(fromSegue segue: UIStoryboardSegue)
@@ -72,51 +78,37 @@ class AnimeListDayWireframe//: StoryboardSegueDelegate
 
     // MARK: - Prepare interface
 
-    /*
-    func prepare<# Interface name #>Interface()
+    func prepareAnimeListEpisodeInterface(animeName: String)
     {
-        var presenter = <# Interface name #>Presenter()
-        var interactor = <# Interface name #>Interactor()
-        var wireframe = <# Interface name #>Wireframe()
+        let presenter = AnimeListEpisodePresenter()
+        let interactor = AnimeListEpisodeInteractor()
+        let wireframe = AnimeListEpisodeWireframe()
         interactor.output = presenter
         presenter.interactor = interactor
         presenter.wireframe = wireframe
         wireframe.presenter = presenter
         if let segue = self.preparedSegue {
-            MBLog.view(MBLog.Level.High, object: "Did prepare <# Interface name #> interface.")
+            MBLog.view(MBLog.Level.High, object: "Did prepare anime list episodes interface.")
             wireframe.prepareInterface(fromSegue: segue)
         }
         else {
-            MBLog.error(MBLog.Level.High, object: "Did fail to prepare <# Interface name #> interface.")
+            MBLog.error(MBLog.Level.High, object: "Did fail to prepare anime list episodes interface.")
         }
     }
-    */
     
     // MARK: - Storyboard
     
-    /*
     private func mainStoryboard() -> UIStoryboard
     {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle:NSBundle.mainBundle())
         return storyboard
     }
-    */
     
-    /*
-    private func viewControllerFromStoryboard() -> AnimeListDayViewController
-    {
-    let storyboard = self.mainStoryboard()
-    let viewController = storyboard.instantiateViewControllerWithIdentifier(AnimeListDayViewControllerIdentifier) as! AnimeListDayViewController
-    return viewController
-    }
-    */
-    
-    /*
     private func navigationControllerFromStoryboard() -> UINavigationController
     {
     let storyboard = self.mainStoryboard()
     let navigationController = storyboard.instantiateViewControllerWithIdentifier(AnimeListDayViewControllerIdentifier) as! UINavigationController
     return navigationController
     }
-    */
 }
+

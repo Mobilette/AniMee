@@ -18,19 +18,25 @@ class AnimeListDayInteractor:
     
     weak var output: AnimeListDayInteractorOutput? = nil
     var networkController: AnimeListDayNetworkProtocol? = nil
-
+    private var episodeDate: NSDate = NSDate()
+    
+    init(date: NSDate)
+    {
+        self.episodeDate = date
+    }
+    
     // MARK: - AnimeListDay interactor input interface
 
-    func findListOfAnimeEpisodeForASepecificDay(date: NSDate)
+    func findListOfAnimeEpisodeForASepecificDay()
     {
-        self.networkController?.fetchAnimeEpisodesOfSpecificDay(date)
+        self.networkController?.fetchAnimeEpisodesOfSpecificDay(self.episodeDate)
         .then { [unowned self] JSONItem -> Void in
         let item = self.animeEpisodesItem(JSONItem)
         MBLog.app(MBLog.Level.High, object: "Did find anime episode for a specific day: \(item).")
         self.output?.didFindListOfAnimeEpisodeForASepecificDay(item)
         }
         .error { [unowned self] error -> Void in
-            MBLog.app(MBLog.Level.High, object: "Did fail to <# failure action #>.")
+            MBLog.app(MBLog.Level.High, object: "Did fail to find anime episode for a specific day.")
             self.output?.didFailToFindListOfAnimeEpisodeForASepecificDay(error)
         }
     }
@@ -39,6 +45,11 @@ class AnimeListDayInteractor:
     
     private func animeEpisodesItem(animeListDayJSONItem: [AnimeListDayJSONItem]) -> [AnimeListDayItem]
     {
-        return [AnimeListDayItem()]
+        var dayEpisodeItems: [AnimeListDayItem] = []
+        for item in animeListDayJSONItem {
+            let dayEpisodeItem = AnimeListDayItem(animeListDayJSONItem: item)
+            dayEpisodeItems.append(dayEpisodeItem)
+        }
+        return dayEpisodeItems
     }
 }
